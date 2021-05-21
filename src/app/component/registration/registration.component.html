@@ -1,5 +1,23 @@
-<div class="form-content">
-    <form class="form">
-        <h1>Create Your FundooNote Account</h1>
-    </form>
+<div fxLayoutAlign="center center" fxFlexFill class="registration-div">
+    <mat-card fxFlex="30">
+        <mat-toolbar color="primary">Registration</mat-toolbar>
+        <form fxLayoutAlign="stretch" fxLayout="column" class="registration-form">
+            <mat-form-field>
+              <input matInput placeholder="FirstName">
+            </mat-form-field>
+          
+            <mat-form-field>
+                <input matInput placeholder="LastName">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput type="email" placeholder="Email">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput type="password" placeholder="Password">
+            </mat-form-field>
+            <button mat-raised-button type="submit">Register</button>            
+          </form>
+    </mat-card>
 </div>
