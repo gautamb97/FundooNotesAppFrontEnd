@@ -22,12 +22,14 @@
                 <form fxLayoutAlign="stretch" fxLayout="row" class="registration-form">
                     <mat-form-field hideRequiredMarker appearance="outline">
                         <mat-label>First Name</mat-label>
-                        <input matInput placeholder="First Name" required>
+                        <input matInput placeholder="First Name" pattern="^[A-za-z]{3,}" [formControl]="name" required>
+                        <mat-error *ngIf="name.invalid">{{getError()}}</mat-error>
                     </mat-form-field>
 
                     <mat-form-field hideRequiredMarker appearance="outline">
                         <mat-label>Last Name</mat-label>
-                        <input matInput placeholder="Last Name" required>
+                        <input matInput placeholder="Last Name" pattern="^[A-za-z]{3,}" [formControl]="lastName" required>
+                        <mat-error *ngIf="lastName.invalid">{{errorMessage()}}</mat-error>
                     </mat-form-field>
                 </form>
                 <form fxLayoutAlign="stretch" fxLayout="column" class="email">
@@ -41,7 +43,8 @@
                 <form class="registration-form">
                     <mat-form-field hideRequiredMarker appearance="outline">
                         <mat-label>Password</mat-label>
-                        <input matInput type="password" placeholder="Password" required>
+                        <input matInput type="password" placeholder="Password" pattern="(?=.*[A-Z])(?=.*[0-9])(?=.*\W)[a-zA-Z0-9\#]{8,}" [formControl]="password" required>
+                        <mat-error *ngIf="password.invalid">{{passwordErrorMessage()}}</mat-error>
                     </mat-form-field>
                     <mat-form-field hideRequiredMarker appearance="outline">
                         <mat-label>Confirm</mat-label>

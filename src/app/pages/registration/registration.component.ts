@@ -16,7 +16,21 @@ export class RegistrationComponent implements OnInit {
     }
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
-  
+
+  name = new FormControl('', Validators.required);
+  getError() {
+    return (this.name.hasError('required')) ? 'You must enter a value' : 'Must conatin three letters and only alphabets allowed';
+  }
+
+  lastName = new FormControl('', Validators.required);
+  errorMessage() {
+    return (this.lastName.hasError('required')) ? 'You must enter a value' : 'Must conatin three letters and only alphabets allowed';
+  }
+
+  password = new FormControl('', Validators.required);
+  passwordErrorMessage() {
+    return (this.password.hasError('required')) ? 'You must enter a value' : 'Must have One Capital, one small latter and one number and a symbol';
+  }
   constructor() { }
 
   ngOnInit(): void {
