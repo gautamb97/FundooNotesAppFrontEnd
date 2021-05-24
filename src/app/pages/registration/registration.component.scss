@@ -6,9 +6,11 @@
 .title {
     margin-top: 200px;
     position: absolute;
-    margin-left: 100px;
+    margin-left: 115px;
     padding: 0px;
+    padding-top: 20px;
     transform: translate(-50%, -50%);
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 ul {
     padding: 0;
@@ -60,8 +62,17 @@ ul li:nth-child(10) {
     color: yellow;
 }
 
+.subheading {
+    padding-top: 45px;
+    margin-left: 35px;
+    h3 {
+        font-size: 25px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+}
+
 .registration-div mat-card {
-    padding: 20px;
+    padding: 45px;
     border: 1px solid #e5e5e5
 }
 
@@ -86,4 +97,14 @@ ul li:nth-child(10) {
 .email {
     padding: 20px;
     width: 460px;
+}
+
+.image {
+    width: 220px;
+    display: block;
+    margin-left: 95px;
+}
+
+.card {
+    display: flex;
 }

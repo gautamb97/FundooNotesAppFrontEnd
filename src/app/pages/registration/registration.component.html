@@ -1,0 +1,63 @@
+<div fxLayoutAlign="center center" fxFlexFill class="registration-div">
+    <mat-card fxFlex="60">
+        <mat-card-subtitle class="title">
+            <ul>
+                <li>F</li>
+                <li>u</li>
+                <li>n</li>
+                <li>d</li>
+                <li>o</li>
+                <li>o</li>
+                <li>N</li>
+                <li>o</li>
+                <li>t</li>
+                <li>e</li>
+            </ul>
+        </mat-card-subtitle>
+        <div class="subheading">
+            <h3>Create your fundooNote account</h3>
+        </div>
+        <div class="card" role="presentation">
+            <div>
+                <form fxLayoutAlign="stretch" fxLayout="row" class="registration-form">
+                    <mat-form-field hideRequiredMarker appearance="outline">
+                        <mat-label>First Name</mat-label>
+                        <input matInput placeholder="First Name" required>
+                    </mat-form-field>
+
+                    <mat-form-field hideRequiredMarker appearance="outline">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput placeholder="Last Name" required>
+                    </mat-form-field>
+                </form>
+                <form fxLayoutAlign="stretch" fxLayout="column" class="email">
+                    <mat-form-field hideRequiredMarker appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput type="email" style="width: 200px" placeholder="Email" required>
+                        <mat-hint>You can use letters, numbers & periods</mat-hint>
+                    </mat-form-field>
+                </form>
+                <form class="registration-form">
+                    <mat-form-field hideRequiredMarker appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput type="password" placeholder="Password" required>
+                    </mat-form-field>
+                    <mat-form-field hideRequiredMarker appearance="outline">
+                        <mat-label>Confirm</mat-label>
+                        <input matInput type="password" placeholder="Confirm" required>
+                    </mat-form-field>
+                    <mat-hint fxLayout="column">Use 8 or more characters with a mix of letters, numbers & symbols
+                    </mat-hint>
+                </form>
+                <button class="login-button" mat-stroked-button type="submit">Sign in instead</button>
+                <button class="register-button" mat-stroked-button type="submit">Next</button>
+            </div>
+            <div>
+                <figure class=image>
+                    <img src="https://ssl.gstatic.com/accounts/signup/glif/account.svg" alt="" width="244" height="244"
+                        class="j9NuTc TrZEUc">
+                </figure>
+            </div>
+        </div>
+    </mat-card>
+</div>
