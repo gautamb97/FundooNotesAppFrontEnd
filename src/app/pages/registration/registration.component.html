@@ -11,8 +11,8 @@
                 <form fxLayoutAlign="stretch" fxLayout="row" class="registration-form">
                     <mat-form-field hideRequiredMarker appearance="outline">
                         <mat-label>First Name</mat-label>
-                        <input matInput placeholder="First Name" pattern="^[A-za-z]{3,}" [formControl]="name" required>
-                        <mat-error *ngIf="name.invalid">{{getError()}}</mat-error>
+                        <input matInput placeholder="First Name" pattern="^[A-za-z]{3,}" [formControl]="firstName" required>
+                        <mat-error *ngIf="firstName.invalid">{{getError()}}</mat-error>
                     </mat-form-field>
 
                     <mat-form-field hideRequiredMarker appearance="outline">
@@ -43,7 +43,7 @@
                     </mat-hint>
                 </form>
                 <button class="login-button" mat-stroked-button type="submit">Sign in instead</button>
-                <button class="register-button" mat-stroked-button type="submit">Next</button>
+                <button class="register-button" mat-stroked-button type="submit" (click)="submit()">Next</button>
             </div>
             <div>
                 <figure class=image>
