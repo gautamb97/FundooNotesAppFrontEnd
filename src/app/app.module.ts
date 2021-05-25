@@ -11,12 +11,14 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import {ReactiveFormsModule} from '@angular/forms'
+import {ReactiveFormsModule} from '@angular/forms';
+import { LogoComponent } from './pages/logo/logo.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
+    LogoComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,53 @@
+.logo {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+}
+
+ul li {
+    font-size: 2em;
+}
+
+ul li:nth-child(1) {
+    color: red;
+}
+
+ul li:nth-child(2) {
+    color: orange;
+}
+
+ul li:nth-child(3) {
+    color: yellow;
+}
+
+ul li:nth-child(4) {
+    color: lightgreen;
+}
+
+ul li:nth-child(5) {
+    color: dodgerblue;
+}
+
+ul li:nth-child(6) {
+    color: indigo;
+}
+
+ul li:nth-child(7) {
+    color: violet;
+}
+ul li:nth-child(8) {
+    color: red;
+}
+
+ul li:nth-child(9) {
+    color: orange;
+}
+
+ul li:nth-child(10) {
+    color: yellow;
+}
