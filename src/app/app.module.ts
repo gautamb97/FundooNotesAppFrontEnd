@@ -12,13 +12,13 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {ReactiveFormsModule} from '@angular/forms';
-import { LogoComponent } from './pages/logo/logo.component'
+import { TitleComponent } from './components/title/title.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
-    LogoComponent,
+    TitleComponent,
   ],
   imports: [
     BrowserModule,
