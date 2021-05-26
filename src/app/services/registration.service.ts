@@ -6,9 +6,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RegistrationService {
 
-  constructor(public http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   registerUser(data: any) {
     return this.http.post('http://localhost:3000/registration', data)
+  }
+
+  login(data: any) {
+    return this.http.post('http://localhost:3000/login', data)
   }
 }
