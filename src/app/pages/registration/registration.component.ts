@@ -33,7 +33,6 @@ export class RegistrationComponent implements OnInit {
   passwordErrorMessage() {
     return (this.password.hasError('required')) ? 'You must enter a value' : 'Must have One Capital, one small latter and one number and a symbol';
   }
-  constructor(private registrationService: RegistrationService) { }
 
   ngOnInit(): void {
   }
@@ -43,6 +42,8 @@ export class RegistrationComponent implements OnInit {
   data: any
   success: any
   error: any
+
+  constructor(private registrationService: RegistrationService) { }
 
   submit() {
     this.registrationService.registerUser(this.user).subscribe(response => {
