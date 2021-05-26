@@ -42,7 +42,7 @@
                     <mat-hint fxLayout="column">Use 8 or more characters with a mix of letters, numbers & symbols
                     </mat-hint>
                 </form>
-                <button class="login-button" mat-stroked-button type="submit">Sign in instead</button>
+                <button class="login-button" mat-stroked-button type="submit" [routerLink]="['/login']" >Sign in instead</button>
                 <button class="register-button" mat-stroked-button type="submit" (click)="submit()">Next</button>
             </div>
             <div>

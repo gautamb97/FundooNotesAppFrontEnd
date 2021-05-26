@@ -12,6 +12,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { RouterModule } from '@angular/router'
 import { TitleComponent } from './components/title/title.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './pages/login/login.component'
@@ -35,7 +36,8 @@ import { LoginComponent } from './pages/login/login.component'
     MatToolbarModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
