@@ -1,0 +1,32 @@
+.card {
+    display: flex;
+}
+
+.title {
+    padding: 2%;
+    margin-left: 3%;
+}
+
+.login-form {
+    padding: 20px;
+}
+
+.login-credentials {
+    width: 100%;
+}
+
+.login-button {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.register-button {
+    border: white;
+    background-color: white;
+    color: dodgerblue;
+}
+
+.buttons {
+    display: flex;
+    padding-top: 5%;
+}

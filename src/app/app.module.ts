@@ -13,13 +13,15 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { TitleComponent } from './components/title/title.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './pages/login/login.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
     TitleComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
