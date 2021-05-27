@@ -18,4 +18,8 @@ export class UserService {
     return this.httpService.postData(environment.URL + 'login', data)
   }
 
+  forgotPassword(data: any) {
+    return this.httpService.postData(environment.URL + 'forgotPassword', data)
+  }
+
 }
