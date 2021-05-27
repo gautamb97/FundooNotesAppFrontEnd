@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar'
-import { RegistrationService } from '../../services/registration.service';
+import { UserService } from '../../services/user.service';
 import { User } from '../registration/registration.model'
 
 @Component({
@@ -43,7 +43,7 @@ export class RegistrationComponent implements OnInit {
   data: any
   error: any
 
-  constructor(private registrationService: RegistrationService,
+  constructor(private registrationService: UserService,
               private snackBar: MatSnackBar ) { }
 
   submit() {

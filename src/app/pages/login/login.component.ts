@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-import { RegistrationService } from '../../services/registration.service';
+import { UserService } from '../../services/user.service';
 import { User } from '../login/login.model';
 
 @Component({
@@ -11,7 +11,7 @@ import { User } from '../login/login.model';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private registrationService: RegistrationService,
+  constructor(private loginService: UserService,
               private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   error: any
 
   submit() {
-    this.registrationService.login(this.user).subscribe(response => {
+    this.loginService.login(this.user).subscribe(response => {
       console.log(response)
       this.data = response
       this.message = this.data.message
