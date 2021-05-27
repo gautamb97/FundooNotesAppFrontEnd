@@ -24,13 +24,14 @@
     color: white;
 }
 
-.register-button {
+.register-link {
     border: white;
     background-color: white;
     color: dodgerblue;
+    text-decoration: none;
 }
 
-.buttons {
+.links {
     display: flex;
     padding-top: 5%;
 }
