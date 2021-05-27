@@ -18,7 +18,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { TitleComponent } from './components/title/title.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './pages/login/login.component';
-import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component'
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './pages/reset-password/reset-password.component'
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
     TitleComponent,
     LoginComponent,
     ForgotPasswordComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     BrowserModule,
