@@ -11,4 +11,8 @@ export class HttpService {
   postData(data: any , url: any) {
        return this.http.post(data, url)
      }
+
+  postDataWithHeader(data: any, url: any, token: any) {
+    return this.http.post(data, url, token)
+  }
 }
