@@ -17,7 +17,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { TitleComponent } from './components/title/title.component';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './pages/login/login.component'
+import { LoginComponent } from './pages/login/login.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component'
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { LoginComponent } from './pages/login/login.component'
     RegistrationComponent,
     TitleComponent,
     LoginComponent,
+    ForgotPasswordComponent,
   ],
   imports: [
     BrowserModule,
