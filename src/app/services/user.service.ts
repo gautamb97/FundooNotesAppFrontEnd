@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpHeaders } from '@angular/common/http'
+import { HttpParams, HttpHeaders } from '@angular/common/http'
 
 import { HttpService } from './http.service';
-import { environment } from '../../environments/environment'
+import { environment } from '../../environments/environment';
+//import { ResetPasswordComponent } from '../pages/reset-password/reset-password.component'
 
 
 @Injectable({
@@ -10,7 +11,9 @@ import { environment } from '../../environments/environment'
 })
 export class UserService {
 
-  constructor(private httpService: HttpService) { }
+  constructor(private httpService: HttpService, 
+    //private reset: ResetPasswordComponent
+    ) { }
   registerUser(data: any) {
     return this.httpService.postData(environment.URL + 'registration', data)
   }
@@ -24,10 +27,11 @@ export class UserService {
   }
 
   resetPassword(data: any) {
-    const httpHeader = new HttpHeaders({
-      'token': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ind3dy5nYXV0YW05NzE5OTdAZ21haWwuY29tIiwiaWQiOiI2MDk3YTU1MjNmYTUwZDAxYTRhNTY0N2IiLCJpYXQiOjE2MjIxMjYyNTMsImV4cCI6MTYyMjIxMjY1M30.ox3zV14qREDP2jPfeesI64DB-qD4-zloTsKWFjEVCq8"
+    const httpHeaders = new HttpHeaders({
+        'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ind3dy5nYXV0YW05NzE5OTdAZ21haWwuY29tIiwiaWQiOiI2MDk3YTU1MjNmYTUwZDAxYTRhNTY0N2IiLCJpYXQiOjE2MjIyOTU0NzUsImV4cCI6MTYyMjM4MTg3NX0.opakZ4qOVVbiBgUms_q6osH6i_CEPvs8J-jYLXKGNz8'
     })
-    return this.httpService.postDataWithHeader(environment.URL + 'resetPassword', data, { headers: httpHeader })
+    console.log(httpHeaders);
+    return this.httpService.postDataWithHeader(environment.URL + 'resetPassword/:token', data, {headers: httpHeaders})
   }
 
 }

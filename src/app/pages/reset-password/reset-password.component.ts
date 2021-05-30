@@ -13,7 +13,10 @@ import { ResetPasswordData } from '../reset-password/reset-password.model'
 export class ResetPasswordComponent implements OnInit {
 
   constructor(private resetPasswordService: UserService,
-              private snackBar: MatSnackBar) { }
+              private snackBar: MatSnackBar,
+              ) { }
+  
+  token: any
 
   ngOnInit(): void {
   }
@@ -31,8 +34,8 @@ export class ResetPasswordComponent implements OnInit {
       this.snackBar.open(this.message, '', { duration: 2000 })
     }, error => {
       console.log(error)
-      this.error = error
-      this.message = this.error.error.error
+      this.error = error.error.err
+      this.message = this.error
       this.snackBar.open(this.message, '', { duration: 2000 })
     })
   }
