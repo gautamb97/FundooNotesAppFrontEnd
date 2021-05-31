@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router'
 
 import { UserService } from '../../services/user.service';
 import { ResetPasswordData } from '../reset-password/reset-password.model'
@@ -14,6 +15,7 @@ export class ResetPasswordComponent implements OnInit {
 
   constructor(private resetPasswordService: UserService,
               private snackBar: MatSnackBar,
+              private router: ActivatedRoute
               ) { }
   
   token: any
@@ -27,8 +29,9 @@ export class ResetPasswordComponent implements OnInit {
   error: any
 
   submit() {
-    this.resetPasswordService.resetPassword(this.resetData).subscribe(response => {
-      console.log(response)
+    const token = this.router.snapshot.params
+    this.resetPasswordService.resetPassword(this.resetData, token).subscribe(response => {
+      console.log(response) 
       this.data = response
       this.message = this.data.message
       this.snackBar.open(this.message, '', { duration: 2000 })
