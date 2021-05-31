@@ -21,12 +21,14 @@ export class LoginComponent implements OnInit {
   message: any
   data: any
   error: any
+  token: any
 
   submit() {
     this.loginService.login(this.user).subscribe(response => {
-      console.log(response)
       this.data = response
       this.message = this.data.message
+      this.token = this.data.token
+      localStorage.setItem('token', this.token)
       this.snackBar.open(this.message, '', { duration: 2000 })
     }, error => {
       console.log(error)
