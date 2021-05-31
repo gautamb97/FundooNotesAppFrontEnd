@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router'
 
 import { UserService } from '../../services/user.service';
 import { User } from '../login/login.model';
@@ -12,7 +13,8 @@ import { User } from '../login/login.model';
 export class LoginComponent implements OnInit {
 
   constructor(private loginService: UserService,
-              private snackBar: MatSnackBar) { }
+              private snackBar: MatSnackBar,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -29,6 +31,7 @@ export class LoginComponent implements OnInit {
       this.message = this.data.message
       this.token = this.data.token
       localStorage.setItem('token', this.token)
+      this.router.navigate(['/dashboard'])
       this.snackBar.open(this.message, '', { duration: 2000 })
     }, error => {
       console.log(error)
