@@ -1,18 +1,22 @@
-<div fxLayoutAlign="center" fxFlexFill class="frame">
-    <mat-card fxFlex="100">
-        <mat-card-header>
+<div class="frame" style="height: 10%;">
+    <mat-card fxFlex="100" style="display: flex;">
+        <button mat-icon-button>
+            <mat-icon>menu</mat-icon>
+          </button>
             <div class="keep-icon" role="button">
                 <button mat-flat-button style="padding: 0%;"><img class="google"
                         src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png"
                         srcset="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png 1x, https://www.gstatic.com/images/branding/product/2x/keep_2020q4_48dp.png 2x "
-                        alt="" aria-hidden="true" style="width:40px;height:40px;padding-top: 0px;"> </button>
+                        alt="" aria-hidden="true" style="width:40px;height:40px;padding-top: 0px;"> 
+                </button>
             </div>
-        <div class="title">
-            <app-title></app-title>
-        </div>
-        <div class="search">
-            <app-search></app-search>
-        </div>
-        </mat-card-header>
+            <div class="title">
+                <app-title></app-title>
+            </div>
+            <div class="search">
+                <app-search></app-search>
+            </div>
     </mat-card>
+
 </div>
+<app-side-navigation></app-side-navigation>
