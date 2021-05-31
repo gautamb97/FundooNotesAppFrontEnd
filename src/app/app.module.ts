@@ -14,12 +14,17 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatIconModule } from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 import { TitleComponent } from './components/title/title.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './pages/login/login.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
-import { ResetPasswordComponent } from './pages/reset-password/reset-password.component'
+import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { SearchComponent } from './components/search/search.component';
+import { SideNavigationComponent } from './components/side-navigation/side-navigation.component'
 
 @NgModule({
   declarations: [
@@ -29,6 +34,9 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
     LoginComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
+    DashboardComponent,
+    SearchComponent,
+    SideNavigationComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +52,9 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
     FormsModule,
     HttpClientModule,
     RouterModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatIconModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
