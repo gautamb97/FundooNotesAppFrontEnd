@@ -11,7 +11,7 @@ export class SideNavigationComponent implements OnInit {
   contentMargin = 240;
   constructor() { }
 
-  onToolBarToggle() {
+  toggle() {
     this.isMenuOpen = !this.isMenuOpen
     if (!this.isMenuOpen) {
       this.contentMargin = 50;

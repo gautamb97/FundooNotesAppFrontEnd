@@ -1,8 +1,11 @@
-<div class="frame" style="height: 10%;">
+<div class="frame" fxFlexFill>
     <mat-card fxFlex="100" style="display: flex;">
+        <div fxLayout="column">
         <button mat-icon-button>
-            <mat-icon>menu</mat-icon>
+            <mat-icon (click)="toggle()">menu</mat-icon>
           </button>
+          <app-side-navigation style="padding-top: 50%; margin-left: 20%;"></app-side-navigation>
+          </div>
             <div class="keep-icon" role="button">
                 <button mat-flat-button style="padding: 0%;"><img class="google"
                         src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png"
@@ -17,6 +20,7 @@
                 <app-search></app-search>
             </div>
     </mat-card>
-
 </div>
-<app-side-navigation></app-side-navigation>
+<div class="sidenav">
+    <app-side-navigation style="padding-right: 50%;"></app-side-navigation>
+</div>

@@ -1,7 +1,37 @@
 <mat-sidenav-container fxLayout="column">
-    <mat-sidenav mode="side">Side Nav</mat-sidenav>
+    <mat-sidenav mode="side" #sidenav id="sidenav" [class.menu-open]="isMenuOpen" [class.menu-close]="!isMenuOpen"
+    opened>
     <mat-sidenav-content>
-        Main
-        <button (click)="onToolBarToggle()"></button>
+          <div style="padding-top: 2%;">
+            <button mat-icon-button style="padding-top: 2%; padding-right: 60%;" class="menu-item">
+                <mat-icon fontSet="material-icons-outlined" style="margin-top: 3%;">lightbulb</mat-icon>
+                Notes
+            </button>
+        </div>
+        <div>
+            <button mat-icon-button style="padding-top: 35%; padding-right: 60%;">
+                <mat-icon fontSet="material-icons-outlined">notifications</mat-icon>
+                Reminder
+            </button>
+        </div>
+        <div>
+            <button mat-icon-button style="padding-top: 35%; padding-right: 60%;">
+                <mat-icon fontSet="material-icons-outlined" style="padding-right: 160%;">edit</mat-icon>
+                Edit Labels
+            </button>
+        </div>
+        <div>
+            <button mat-icon-button style="padding-top: 35%; padding-right: 60%;">
+                <mat-icon fontSet="material-icons-outlined">archive</mat-icon>
+                Archive
+            </button>
+        </div>
+        <div>
+            <button mat-icon-button style="padding-top: 35%; padding-right: 60%;">
+                <mat-icon fontSet="material-icons-outlined">delete</mat-icon>
+                Bin
+            </button>
+        </div>
     </mat-sidenav-content>
+    </mat-sidenav>
 </mat-sidenav-container>
