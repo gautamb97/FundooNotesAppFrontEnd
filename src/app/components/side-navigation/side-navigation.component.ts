@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-side-navigation',
@@ -7,18 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideNavigationComponent implements OnInit {
 
+  @Input() 
+  toggle: any;
+
   isMenuOpen = false;
   contentMargin = 240;
   constructor() { }
-
-  toggle() {
-    this.isMenuOpen = !this.isMenuOpen
-    if (!this.isMenuOpen) {
-      this.contentMargin = 50;
-    } else {
-      this.contentMargin = 240;
-    }
-  }
 
   ngOnInit(): void {
   }

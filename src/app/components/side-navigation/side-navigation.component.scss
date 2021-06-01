@@ -1,0 +1,25 @@
+#sidenavContainer {
+    margin-top: 5%;
+}
+
+#sidenav {
+    width: 16%;
+}
+
+#sidenav.menu-close {
+    width: 4%;
+}
+
+#sidenav .menu-item {
+    width: 100%;
+    border-radius: 20px;
+    text-align: left; 
+}
+
+#sidenav .menu-item:hover {
+  background: #eee;
+}
+#sidenav .menu-item mat-icon {
+    margin-right: 20px;
+    margin-left: 12px;
+}
