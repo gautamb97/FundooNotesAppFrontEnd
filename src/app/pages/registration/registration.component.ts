@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import { FormControl, FormGroup, Validators, } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { UserService } from '../../services/user.service';
 import { User } from '../registration/registration.model'
@@ -44,7 +44,19 @@ export class RegistrationComponent implements OnInit {
   error: any
 
   constructor(private registrationService: UserService,
-              private snackBar: MatSnackBar ) { }
+    private snackBar: MatSnackBar) { //this.createForm(); 
+    }
+
+  //   contactForm!: FormGroup;
+
+  // createForm(): void {
+  //   this.contactForm = new FormGroup({
+  //     'email': new FormControl('', [Validators.required, Validators.email]),
+  //     'firstName': new FormControl('', Validators.required),
+  //     'lastName': new FormControl('', Validators.required),
+  //     'password': new FormControl('', Validators.required),
+  //   })
+  // }
 
   submit() {
     this.registrationService.registerUser(this.user).subscribe(response => {
