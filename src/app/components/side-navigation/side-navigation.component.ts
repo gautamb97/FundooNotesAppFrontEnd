@@ -7,14 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SideNavigationComponent implements OnInit {
 
-  @Input() 
-  toggle: any;
+  @Input() toggle : any
 
-  isMenuOpen = false;
-  contentMargin = 240;
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }
