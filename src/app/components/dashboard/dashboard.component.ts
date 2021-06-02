@@ -8,15 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
 
   isMenuOpen = false;
-  contentMargin = 240;
   constructor() { }
-  toggle() {
+
+  toggle(){
     this.isMenuOpen = !this.isMenuOpen
-    if (!this.isMenuOpen) {
-      return this.contentMargin = 50;
-    } else {
-      return this.contentMargin = 240;
-    }
   }
 
   ngOnInit(): void {
