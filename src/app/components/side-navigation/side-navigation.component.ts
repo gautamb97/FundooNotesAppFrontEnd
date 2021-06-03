@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-side-navigation',
@@ -8,8 +9,12 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SideNavigationComponent implements OnInit {
 
   @Input() toggle : any
+  contentMargin = 240
 
-  constructor() { }
+  displayNotes(){
+    this.route.navigate(['dashboard/notes'])
+  }
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
   }

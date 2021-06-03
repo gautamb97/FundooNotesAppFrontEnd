@@ -2,8 +2,8 @@
     <mat-sidenav mode="side" id="sidenav" [class.menu-close]="!toggle" [class.menu-open]="toggle"
     opened>
           <div>
-            <button mat-icon-button class="menu-item">
-                <mat-icon fontSet="material-icons-outlined">lightbulb</mat-icon>
+            <button mat-icon-button class="menu-item" (click)="displayNotes()">
+                <mat-icon fontSet="material-icons-outlined" >lightbulb</mat-icon>
                 Notes
             </button>
         </div>
@@ -32,4 +32,7 @@
             </button>
         </div>
     </mat-sidenav>
+        <div>
+            <router-outlet></router-outlet>
+        </div>
 </mat-sidenav-container>
