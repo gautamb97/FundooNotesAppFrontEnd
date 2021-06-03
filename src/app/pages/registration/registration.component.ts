@@ -44,19 +44,14 @@ export class RegistrationComponent implements OnInit {
   error: any
 
   constructor(private registrationService: UserService,
-    private snackBar: MatSnackBar) { //this.createForm(); 
-    }
+    private snackBar: MatSnackBar) { }
 
-  //   contactForm!: FormGroup;
-
-  // createForm(): void {
-  //   this.contactForm = new FormGroup({
-  //     'email': new FormControl('', [Validators.required, Validators.email]),
-  //     'firstName': new FormControl('', Validators.required),
-  //     'lastName': new FormControl('', Validators.required),
-  //     'password': new FormControl('', Validators.required),
-  //   })
-  // }
+    form = new FormGroup({
+      firstName: new FormControl('', Validators.required),
+      lastName: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', Validators.required),
+      })
 
   submit() {
     this.registrationService.registerUser(this.user).subscribe(response => {
