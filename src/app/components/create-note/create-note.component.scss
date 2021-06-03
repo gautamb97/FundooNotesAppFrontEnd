@@ -1,0 +1,19 @@
+.addNote{
+    margin-left: 100px;
+}
+.title{
+  font-family: 'Google Sans',Roboto,Arial,sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.close-button{
+  display: flex; 
+  justify-content:space-between;
+  margin-top: 20px;
+  margin-left: -2px;
+}
+.note-icon{
+  display: flex;
+  justify-content: space-around;
+}

@@ -1,0 +1,49 @@
+<div flexLayoutAlign="center center" class="frame">
+    <mat-accordion class="addNote">
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <form style="padding-top: 1.5%;">
+                        <input class="title" matInput placeholder="Title" autocomplete="off"
+                            name="first">
+                    </form>
+                    <div style="margin-left: 80%;">
+                        <button mat-icon-button>
+                            <mat-icon fontSet="material-icons-outlined" aria-label="Remind me">push_pin</mat-icon>
+                        </button>
+                        </div>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <form>
+                <input class="title" matInput placeholder="Take a note..." name="first">
+                <div class="close-button">
+                    <button mat-icon-button aria-label="Remind me">
+                        <mat-icon fontSet="material-icons-outlined" aria-label="Remind me">add_alert</mat-icon>
+                    </button>
+                    <button mat-icon-button>
+                        <mat-icon fontSet="material-icons-outlined">person_add_alt</mat-icon>
+                    </button>
+                    <button mat-icon-button>
+                        <mat-icon fontSet="material-icons-outlined">palette</mat-icon>
+                    </button>
+                    <button mat-icon-button>
+                        <mat-icon fontSet="material-icons-outlined">image</mat-icon>
+                    </button>
+                    <button mat-icon-button>
+                        <mat-icon fontSet="material-icons-outlined">archive</mat-icon>
+                    </button>
+                    <button mat-icon-button>
+                        <mat-icon fontSet="material-icons-outlined">more_vert</mat-icon>
+                    </button>
+                    <button mat-icon-button>
+                        <mat-icon fontSet="material-icons-outlined" >undo</mat-icon>
+                    </button>
+                    <button mat-icon-button style="margin-right: 20%;" >
+                        <mat-icon fontSet="material-icons-outlined" >redo</mat-icon>
+                    </button>
+                    <button mat-button>close</button>
+                </div>
+            </form>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
