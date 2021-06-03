@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms'
 
 import { UserService } from '../../services/user.service';
 import { User } from '../login/login.model';
@@ -18,6 +19,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  form = new FormGroup({
+    username: new FormControl('', Validators.required)
+  })
 
   user = new User();
   message: any

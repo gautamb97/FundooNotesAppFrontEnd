@@ -1,8 +1,15 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing'
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatInputModule} from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 import { LoginComponent } from './login.component';
+import { TitleComponent } from '../../components/title/title.component';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -10,10 +17,19 @@ describe('LoginComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginComponent ],
+      declarations: [ 
+        LoginComponent,
+        TitleComponent
+      ],
       imports: [ 
         MatCardModule,
-        MatFormFieldModule       
+        MatFormFieldModule,
+        RouterTestingModule,
+        HttpClientTestingModule,
+        MatSnackBarModule,
+        MatInputModule,
+        BrowserAnimationsModule,
+        FormsModule
       ]
     })
     .compileComponents();
@@ -25,12 +41,17 @@ describe('LoginComponent', () => {
     fixture.detectChanges();
   });
 
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
-  // it('givenEmail_whenCorrect_shouldPass', () =>{
-  //   let email = component.user.email;
-  //   email.setValue('www.gautam971997@gmail.com')
-  //   expect(email.errors).toBeNull();
-  // });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+ 
+  it('givenTheForm_whenTested_shouldCreateForm', ()=> {
+    expect(component.form.contains('username')).toBeTruthy();
+  });
+
+  it('givenTheForm_WhenTested_shouldCreateForm', () => {
+    let control = component.form.get('username');
+    control?.setValue('')
+    expect(control?.valid).toBeFalsy()
+  });
 });
