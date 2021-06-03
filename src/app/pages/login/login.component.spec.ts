@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 
 import { LoginComponent } from './login.component';
 import { TitleComponent } from '../../components/title/title.component';
+import { By } from '@angular/platform-browser';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -53,5 +54,10 @@ describe('LoginComponent', () => {
     let control = component.form.get('username');
     control?.setValue('')
     expect(control?.valid).toBeFalsy()
+  });
+
+  it('givenTheForm_whenTested_shouldShowTitle', ()=> {
+    const de = fixture.debugElement.query(By.css('app-title'));
+    expect(de.nativeElement.textContent).toEqual('FundooNote');
   });
 });
