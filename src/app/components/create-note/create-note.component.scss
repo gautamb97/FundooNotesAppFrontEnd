@@ -1,5 +1,5 @@
 .addNote{
-    margin-left: 100px;
+    margin-left: 10px;
 }
 .title{
   font-family: 'Google Sans',Roboto,Arial,sans-serif;
@@ -13,7 +13,9 @@
   margin-top: 20px;
   margin-left: -2px;
 }
-.note-icon{
-  display: flex;
-  justify-content: space-around;
+
+.frame {
+    width: 40%;
+    margin-left: 38%;
+    height: 0%;
 }
