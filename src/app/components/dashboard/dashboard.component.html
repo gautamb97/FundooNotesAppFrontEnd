@@ -1,25 +1,39 @@
 <div class="frame" fxFlexFill>
     <mat-card fxFlex="100" style="display: flex;">
         <div>
-        <button mat-icon-button>
-            <mat-icon (click)="toggle()">menu</mat-icon>
-          </button>
-          </div>
-            <div class="keep-icon" role="button">
-                <button mat-flat-button style="padding: 0%;"><img class="google"
-                        src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png"
-                        srcset="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png 1x, https://www.gstatic.com/images/branding/product/2x/keep_2020q4_48dp.png 2x "
-                        alt="" aria-hidden="true" style="width:40px;height:40px;padding-top: 0px;"> 
-                </button>
-            </div>
-            <div class="title">
-                <app-title></app-title>
-            </div>
-            <div class="search">
-                <app-search></app-search>
-            </div>
+            <button mat-icon-button>
+                <mat-icon (click)="toggle()">menu</mat-icon>
+            </button>
+        </div>
+        <div class="keep-icon" role="button">
+            <button mat-flat-button style="padding: 0%;"><img class="google"
+                    src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png"
+                    srcset="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png 1x, https://www.gstatic.com/images/branding/product/2x/keep_2020q4_48dp.png 2x "
+                    alt="" aria-hidden="true" style="width:40px;height:40px;padding-top: 0px;">
+            </button>
+        </div>
+        <div class="title">
+            <app-title></app-title>
+        </div>
+        <div class="search">
+            <app-search></app-search>
+        </div>
+        <div style="margin-left: 60%;">
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+                <div style="padding: 10%;">
+                    <mat-menu #menu="matMenu">
+                        <h3 style="text-align: center; text-transform: uppercase;">Hello, {{ firstName }}</h3>
+                        <h3 style="text-align: center;">{{ email }}</h3>
+                        <div style="text-align: center;">
+                        <button mat-stroked-button [routerLink]="['/login']" class="logout-btn">Logout</button>
+                    </div>
+                    </mat-menu>
+                </div>
+                <mat-icon style="font-size: 32px;" fontSet="material-icons-outlined">account_circle</mat-icon>
+            </button>
+        </div>
+        <div>
+            <app-side-navigation [toggle]="isMenuOpen"></app-side-navigation>
+        </div>
     </mat-card>
-</div>
-<div>
-    <app-side-navigation [toggle]="isMenuOpen"></app-side-navigation>
 </div>
