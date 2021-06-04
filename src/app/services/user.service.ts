@@ -30,4 +30,11 @@ export class UserService {
     return this.httpService.postDataWithHeader(environment.URL + 'resetPassword/:token', data, {headers: httpHeaders})
   }
 
+  createNote(data: any, token: any) {
+    const httpHeaders = new HttpHeaders({
+        'token': token
+    })
+    return this.httpService.postDataWithHeader(environment.URL + 'notes', data, {headers: httpHeaders})
+  }
+
 }
