@@ -1,3 +1,6 @@
+@import '../../componentsStyling/variables';
+@import '../../componentsStyling/mixin';
+
 .registration-div mat-card .mat-form-field {
     padding: 0px;
     margin-left: 8px;
@@ -24,7 +27,7 @@
 
 .registration-div mat-card {
     padding: 45px;
-    border: 1px solid #e5e5e5
+    border: 1px solid $gray
 }
 
 
@@ -33,15 +36,14 @@
 }
 
 .register-button {
-    background-color: dodgerblue;
-    color: white;
+    @include buttonStyle;
     margin-left: 260px;
 }
 
 .login-link {
-    border: white;
-    background-color: white;
-    color: dodgerblue;
+    border: $white;
+    background-color: $white;
+    color: $dodgerBlue;
     margin-left: 5%;
     text-decoration: none;
 }

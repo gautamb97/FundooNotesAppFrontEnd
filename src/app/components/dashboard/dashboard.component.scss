@@ -1,3 +1,6 @@
+@import '../../componentsStyling/variables';
+@import '../../componentsStyling/mixin';
+
 .search {
     padding-left: 5%;
     padding-bottom: 100%;
@@ -14,6 +17,5 @@
 }
 
 .logout-btn {
-    background-color: dodgerblue;
-    color: white;
+    @include buttonStyle;
 }

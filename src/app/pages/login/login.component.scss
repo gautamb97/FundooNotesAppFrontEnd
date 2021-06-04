@@ -1,9 +1,12 @@
+@import '../../componentsStyling/variables';
+@import '../../componentsStyling/mixin';
+
 .card {
     display: flex;
 }
 
 .frame mat-card {
-    border: 1px solid #e5e5e5
+    border: 1px solid $gray
 }
 
 .title {
@@ -20,14 +23,13 @@
 }
 
 .login-button {
-    background-color: dodgerblue;
-    color: white;
+    @include buttonStyle;
 }
 
 .register-link {
-    border: white;
-    background-color: white;
-    color: dodgerblue;
+    border: $white;
+    background-color: $white;
+    color: $dodgerBlue;
     text-decoration: none;
 }
 
