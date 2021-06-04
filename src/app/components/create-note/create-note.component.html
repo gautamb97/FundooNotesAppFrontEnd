@@ -3,7 +3,7 @@
             <mat-expansion-panel-header>
                 <mat-panel-title>
                     <form style="padding-top: 1.5%;">
-                        <input class="title" matInput placeholder="Title" autocomplete="off"
+                        <input class="title" matInput placeholder="Title" [(ngModel)]="note.title" autocomplete="off"
                             name="first">
                     </form>
                     <div style="margin-left: 80%;">
@@ -14,10 +14,10 @@
                 </mat-panel-title>
             </mat-expansion-panel-header>
             <form>
-                <input class="title" matInput placeholder="Take a note..." name="first">
+                <input class="title" matInput placeholder="Take a note..." [(ngModel)]="note.description" name="first">
                 <div class="close-button">
                     <app-icons></app-icons>
-                    <button mat-button>close</button>
+                    <button mat-button (click)="submit()">close</button>
                 </div>
             </form>
         </mat-expansion-panel>
