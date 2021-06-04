@@ -16,15 +16,19 @@ import { RouterModule } from '@angular/router';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { TitleComponent } from './components/title/title.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './pages/login/login.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SearchComponent } from './components/search/search.component';
-import { SideNavigationComponent } from './components/side-navigation/side-navigation.component'
+import { SideNavigationComponent } from './components/side-navigation/side-navigation.component';
+import { CreateNoteComponent } from './components/create-note/create-note.component';
+import { IconsComponent } from './components/icons/icons.component'
 
 @NgModule({
   declarations: [
@@ -37,6 +41,8 @@ import { SideNavigationComponent } from './components/side-navigation/side-navig
     DashboardComponent,
     SearchComponent,
     SideNavigationComponent,
+    CreateNoteComponent,
+    IconsComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +60,9 @@ import { SideNavigationComponent } from './components/side-navigation/side-navig
     RouterModule,
     MatSnackBarModule,
     MatIconModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatExpansionModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
