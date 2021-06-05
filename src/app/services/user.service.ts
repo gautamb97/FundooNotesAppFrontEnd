@@ -37,4 +37,10 @@ export class UserService {
     return this.httpService.postDataWithHeader(environment.URL + 'notes', data, {headers: httpHeaders})
   }
 
+  getNotes(token: any) {
+    const httpHeaders = new HttpHeaders({
+        'token': token
+    })
+    return this.httpService.getData(environment.URL + 'notes', {headers: httpHeaders})
+  }
 }
