@@ -1,0 +1,23 @@
+.card{
+    width: 240px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+}
+
+.main-box{
+    display: flex;
+    justify-content:flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.box{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 45%;
+}

@@ -1,0 +1,13 @@
+<div class="main-box">
+<div class="box" *ngFor="let array of notes" fxLayout=row>
+<mat-card class="card" fxFlex="48">
+    <div>
+        {{array.title}}
+    </div>
+    <div>
+        {{array.description}}
+    </div>
+    <app-icons style="width: 15px; display: flex; margin-left: 0.2%; text-size-adjust: 15px;"></app-icons>
+</mat-card>
+</div>
+</div>
