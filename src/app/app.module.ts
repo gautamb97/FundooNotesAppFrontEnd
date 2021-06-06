@@ -28,7 +28,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SearchComponent } from './components/search/search.component';
 import { SideNavigationComponent } from './components/side-navigation/side-navigation.component';
 import { CreateNoteComponent } from './components/create-note/create-note.component';
-import { IconsComponent } from './components/icons/icons.component'
+import { IconsComponent } from './components/icons/icons.component';
+import { GetNotesComponent } from './components/get-notes/get-notes.component'
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { IconsComponent } from './components/icons/icons.component'
     SideNavigationComponent,
     CreateNoteComponent,
     IconsComponent,
+    GetNotesComponent,
   ],
   imports: [
     BrowserModule,
