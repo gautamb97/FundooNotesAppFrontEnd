@@ -22,6 +22,7 @@ export class GetNotesComponent implements OnInit {
     this.getService.getNotes(token).subscribe(res => {
       this.data = res
       this.notes = this.data.data
+      this.notes = this.notes.reverse()
     })
   }
 }
