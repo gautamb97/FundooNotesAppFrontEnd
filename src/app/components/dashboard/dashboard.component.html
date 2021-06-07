@@ -1,5 +1,5 @@
 <div class="frame" fxFlexFill>
-    <mat-card fxFlex="100" style="display: flex;">
+    <mat-card fxFlex="100">
         <div>
             <button mat-icon-button>
                 <mat-icon (click)="toggle()">menu</mat-icon>
@@ -18,20 +18,20 @@
         <div class="search">
             <app-search></app-search>
         </div>
-        <div style="margin-left: 60%;">
+        <div class="menu-style">
             <button mat-icon-button [matMenuTriggerFor]="menu">
-                <div style="padding: 10%;">
-                    <mat-menu #menu="matMenu" style="width: 40%">
+                <div>
+                    <mat-menu #menu="matMenu">
                         <div class="content">
-                            <h3 style="text-align: center; text-transform: uppercase;">Hello, {{ firstName }}</h3>
-                            <h3 style="text-align: center;">{{ email }}</h3>
-                            <div style="text-align: center;">
+                            <h3>Hello, {{ firstName }}</h3>
+                            <h3>{{ email }}</h3>
+                            <div class="logout-btn-style">
                                 <button mat-stroked-button [routerLink]="['/login']" class="logout-btn">Logout</button>
                             </div>
                         </div>
                     </mat-menu>
                 </div>
-                <mat-icon style="font-size: 32px;" fontSet="material-icons-outlined">account_circle</mat-icon>
+                <mat-icon class="profile-btn" fontSet="material-icons-outlined">account_circle</mat-icon>
             </button>
         </div>
         <div>

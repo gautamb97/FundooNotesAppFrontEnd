@@ -12,6 +12,8 @@ export class GetNotesComponent implements OnInit {
 
   data: any;
   notes: any;
+  error: any;
+  message: any;
   constructor(private getService: UserService,
              private interaction: InteractionService) {  }
 
@@ -25,6 +27,10 @@ export class GetNotesComponent implements OnInit {
       this.data = res
       this.notes = this.data.data
       this.notes = this.notes.reverse()
+    }, error => {
+      console.log(error)
+      this.error = error.error.err
+      this.message = this.error
     })
   }
 
