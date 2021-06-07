@@ -1,10 +1,10 @@
 <div flexLayoutAlign="center center" class="frame">
-        <mat-expansion-panel hideToggle class="addNote">
+        <mat-expansion-panel hideToggle class="addNote" [expanded]="panelSize">
             <mat-expansion-panel-header>
                 <mat-panel-title>
-                    <form style="padding-top: 1.5%;">
+                    <form style="padding-top: 1.5%;" #noteForm="ngForm" (ngSubmit)="submit();noteForm.reset()">
                         <input class="title" matInput placeholder="Title" [(ngModel)]="note.title" autocomplete="off"
-                            name="first">
+                            type="text" name="first">
                     </form>
                     <div style="margin-left: 80%;">
                         <button mat-icon-button>
@@ -13,11 +13,11 @@
                         </div>
                 </mat-panel-title>
             </mat-expansion-panel-header>
-            <form>
-                <input class="title" matInput placeholder="Take a note..." [(ngModel)]="note.description" name="first">
+            <form #noteForm="ngForm" (ngSubmit)="submit();noteForm.reset()">
+                <input class="title" matInput placeholder="Take a note..." [(ngModel)]="note.description" autocomplete="off" type="text" name="first">
                 <div class="close-button">
                     <app-icons></app-icons>
-                    <button mat-button (click)="submit()">close</button>
+                    <button mat-button (click)="close();">close</button>
                 </div>
             </form>
         </mat-expansion-panel>

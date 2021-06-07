@@ -10,7 +10,7 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./create-note.component.scss']
 })
 export class CreateNoteComponent implements OnInit {
-  
+  panelSize = false;
   constructor(private snackBar: MatSnackBar,
               private noteService: UserService) { }
 
@@ -19,11 +19,17 @@ export class CreateNoteComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  close() {
+    console.log(this.panelSize)
+    return this.panelSize = !this.panelSize
+  }
   message: any
   data: any
   error: any
 
   submit() {
+    this.panelSize = !this.panelSize
+    console.log(this.panelSize)
     const token = localStorage.getItem('token')
     this.noteService.createNote(this.note, token).subscribe(response => {
       console.log(response) 
