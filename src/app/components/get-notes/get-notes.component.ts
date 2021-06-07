@@ -29,7 +29,7 @@ export class GetNotesComponent implements OnInit {
   }
 
   createNote() {
-    this.interaction.refresh$.subscribe(() => {
+    this.interaction.createNoteData$.subscribe(() => {
       this.submit()
     })
   }
