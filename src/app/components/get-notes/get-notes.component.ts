@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InteractionService } from 'src/app/services/interaction.service';
 
 import { UserService } from '../../services/user.service'
 
@@ -11,10 +12,11 @@ export class GetNotesComponent implements OnInit {
 
   data: any;
   notes: any;
-  constructor(private getService: UserService) { }
+  constructor(private getService: UserService,
+             private interaction: InteractionService) {  }
 
   ngOnInit(): void {
-    this.submit()
+    this.submit(),this.createNote()
   }
 
   submit() {
@@ -23,6 +25,12 @@ export class GetNotesComponent implements OnInit {
       this.data = res
       this.notes = this.data.data
       this.notes = this.notes.reverse()
+    })
+  }
+
+  createNote() {
+    this.interaction.refresh$.subscribe(() => {
+      this.submit()
     })
   }
 }

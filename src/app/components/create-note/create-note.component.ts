@@ -3,6 +3,7 @@ import { Note } from '../create-note/create-note.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { UserService } from '../../services/user.service';
+import { InteractionService } from 'src/app/services/interaction.service';
 
 @Component({
   selector: 'app-create-note',
@@ -12,7 +13,8 @@ import { UserService } from '../../services/user.service';
 export class CreateNoteComponent implements OnInit {
   panelSize = false;
   constructor(private snackBar: MatSnackBar,
-              private noteService: UserService) { }
+              private noteService: UserService,
+              private interaction: InteractionService) { }
 
   note = new Note();
 
@@ -20,7 +22,6 @@ export class CreateNoteComponent implements OnInit {
   }
 
   close() {
-    console.log(this.panelSize)
     return this.panelSize = !this.panelSize
   }
   message: any
@@ -36,6 +37,7 @@ export class CreateNoteComponent implements OnInit {
       this.data = response
       this.message = this.data.message
       this.snackBar.open(this.message, '', { duration: 2000 })
+      this.interaction.sendContent('created note')
     }, error => {
       console.log(error)
       this.error = error.error.err
