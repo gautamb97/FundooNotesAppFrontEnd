@@ -16,6 +16,10 @@ export class HttpService {
     return this.http.post(data, url, token)
   }
 
+  putDataWithHeader(data: any, url: any, token: any) {
+    return this.http.put(data, url, token)
+  }
+
   getData(url: any, token: any) {
     return this.http.get(url, token)
   }
