@@ -1,12 +1,12 @@
 <div class="update">
     <div class="title">
-        <input matInput placeholder="Title">
+        <input matInput placeholder="Title" [(ngModel)]="note.title" name="title" autocomplete="off">
     </div>
     <div class="description">
-        <input matInput placeholder="description">
+        <input matInput placeholder="description" [(ngModel)]="note.description" name="description" autocomplete="off">
     </div>
     <div class="icons">
         <app-icons></app-icons>
-        <button mat-button>close</button>
+        <button mat-button (click)="submit()">close</button>
     </div>
 </div>
