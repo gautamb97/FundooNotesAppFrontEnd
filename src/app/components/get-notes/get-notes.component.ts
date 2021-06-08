@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { InteractionService } from 'src/app/services/interaction.service';
 
-import { UserService } from '../../services/user.service'
+import { UserService } from '../../services/user.service';
+import { UpdateNoteComponent } from '../update-note/update-note.component'
 
 @Component({
   selector: 'app-get-notes',
@@ -15,13 +17,14 @@ export class GetNotesComponent implements OnInit {
   error: any;
   message: any;
   constructor(private getService: UserService,
-    private interaction: InteractionService) { }
+             private interaction: InteractionService,
+             private dialog: MatDialog) {  }
 
   ngOnInit(): void {
     this.submit()
-    this.interaction.createNoteData$.subscribe(() => {
-      this.submit()
-    })
+      this.interaction.createNoteData$.subscribe(() => {
+        this.submit()
+      })
   }
 
   submit() {
@@ -34,6 +37,16 @@ export class GetNotesComponent implements OnInit {
       console.log(error)
       this.error = error.error.err
       this.message = this.error
+    })
+  }
+
+  updateNote(noteId: any) {
+    let dialogRef = this.dialog.open(UpdateNoteComponent)
+    localStorage.setItem('noteId', noteId)
+    dialogRef.afterClosed().subscribe(res => {
+      console.log(res)
+      this.submit()
+      localStorage.removeItem('noteId')
     })
   }
 }

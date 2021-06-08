@@ -1,6 +1,6 @@
 <div class="main-box">
 <div class="box" *ngFor="let array of notes" fxFlexAlign="stretch">
-<mat-card class="card">
+<mat-card class="card" (click)="updateNote(array._id)">
     <div class=array-content>
         {{array.title}}
     </div>
