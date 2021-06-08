@@ -15,10 +15,13 @@ export class GetNotesComponent implements OnInit {
   error: any;
   message: any;
   constructor(private getService: UserService,
-             private interaction: InteractionService) {  }
+    private interaction: InteractionService) { }
 
   ngOnInit(): void {
-    this.submit(),this.createNote()
+    this.submit()
+    this.interaction.createNoteData$.subscribe(() => {
+      this.submit()
+    })
   }
 
   submit() {
@@ -31,12 +34,6 @@ export class GetNotesComponent implements OnInit {
       console.log(error)
       this.error = error.error.err
       this.message = this.error
-    })
-  }
-
-  createNote() {
-    this.interaction.createNoteData$.subscribe(() => {
-      this.submit()
     })
   }
 }

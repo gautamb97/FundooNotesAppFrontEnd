@@ -1,10 +1,10 @@
 <div class="main-box">
-<div class="box" *ngFor="let array of notes">
+<div class="box" *ngFor="let array of notes" fxFlexAlign="stretch">
 <mat-card class="card">
-    <div>
+    <div class=array-content>
         {{array.title}}
     </div>
-    <div>
+    <div class=array-content>
         {{array.description}}
     </div>
     <app-icons class="icons"></app-icons>
