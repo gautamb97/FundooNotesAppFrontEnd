@@ -7,6 +7,6 @@
     </div>
     <div class="icons">
         <app-icons></app-icons>
-        <button mat-button (click)="submit()">close</button>
+        <button mat-button [mat-dialog-close]="true" (click)="submitForUpdate()">close</button>
     </div>
 </div>

@@ -3,7 +3,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { UpdateNote } from '../update-note/update-note.model';
 import { UserService } from '../../services/user.service';
-import { InteractionService } from '../../services/interaction.service'
 
 @Component({
   selector: 'app-update-note',
@@ -13,25 +12,23 @@ import { InteractionService } from '../../services/interaction.service'
 export class UpdateNoteComponent implements OnInit {
 
   constructor(private updateService: UserService,
-              private snackBar: MatSnackBar,
-              private interaction: InteractionService) { }
+              private snackBar: MatSnackBar) { }
 
   note = new UpdateNote()
   data: any
-  message: any
+  message!: string
   error: any
 
   ngOnInit(): void {
   }
 
-  submit() {
+  submitForUpdate() {
     const token = localStorage.getItem('token')
     this.updateService.updateNote(this.note, token).subscribe(response => {
       console.log(response)
       this.data = response
       this.message = this.data.message
       this.snackBar.open(this.message, '', { duration: 2000 })
-      this.interaction.sendContent('update note')
     }, error => {
       console.log(error)
       this.error = error
