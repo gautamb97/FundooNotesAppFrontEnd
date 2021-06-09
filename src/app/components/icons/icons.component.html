@@ -13,6 +13,19 @@
 <button mat-icon-button>
     <mat-icon fontSet="material-icons-outlined">archive</mat-icon>
 </button>
-<button mat-icon-button>
+<button mat-icon-button [matMenuTriggerFor]="menu">
+    <div>
+        <mat-menu #menu="matMenu">
+            <div>
+                <div class="delete-btn-style" fxLayout="column">
+                    <button mat-stroked-button class="delete-btn" fxFlex='stretch'>Delete note</button>
+                    <button mat-stroked-button class="delete-btn" fxFlex='stretch'>Add label</button>
+                    <button mat-stroked-button class="delete-btn" fxFlex='stretch'>Make a copy</button>
+                    <button mat-stroked-button class="delete-btn" fxFlex='stretch'>Show tick boxes</button>
+                    <button mat-stroked-button class="delete-btn" fxFlex='stretch'>Copy to google Docs</button>
+                </div>
+            </div>
+        </mat-menu>
+    </div>
     <mat-icon fontSet="material-icons-outlined">more_vert</mat-icon>
 </button>
