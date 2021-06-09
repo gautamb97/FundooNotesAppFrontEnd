@@ -22,9 +22,9 @@ export class GetNotesComponent implements OnInit {
 
   ngOnInit(): void {
     this.submit()
-      this.interaction.createNoteData$.subscribe(() => {
-        this.submit()
-      })
+    this.interaction.createNoteData$.subscribe(() => {
+      this.submit()
+    })
   }
 
   submit() {
@@ -40,13 +40,14 @@ export class GetNotesComponent implements OnInit {
     })
   }
 
-  updateNote(noteId: any) {
-    let dialogRef = this.dialog.open(UpdateNoteComponent)
+  updateNote(noteId: string) {
+    let dialogRef = this.dialog.open(UpdateNoteComponent, {
+      width: '38%',
+      height: '22%'
+    })
     localStorage.setItem('noteId', noteId)
-    dialogRef.afterClosed().subscribe(res => {
-      console.log(res)
+    dialogRef.afterClosed().subscribe(() => {
       this.submit()
-      localStorage.removeItem('noteId')
     })
   }
 }
