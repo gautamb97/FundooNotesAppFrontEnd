@@ -20,6 +20,10 @@ export class HttpService {
     return this.http.put(data, url, token)
   }
 
+  deleteDataWithHeader(url: any, token: any) {
+    return this.http.delete(url, token)
+  }
+
   getData(url: any, token: any) {
     return this.http.get(url, token)
   }

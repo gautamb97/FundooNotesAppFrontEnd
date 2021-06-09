@@ -50,4 +50,11 @@ export class UserService {
     })
     return this.httpService.putDataWithHeader(environment.URL + 'notes/'+ localStorage.getItem('noteId'), data, {headers: httpHeaders})
   }
+
+  deleteNote(token: any) {
+    const httpHeaders = new HttpHeaders({
+        'token': token
+    })
+    return this.httpService.deleteDataWithHeader(environment.URL + 'notes/' + localStorage.getItem('noteId'), {headers: httpHeaders})
+  }
 }
