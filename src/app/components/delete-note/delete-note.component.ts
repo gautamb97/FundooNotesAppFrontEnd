@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-import { UserService } from '../../services/user.service'
+import { UserService } from '../../services/user.service';
+import { InteractionService } from 'src/app/services/interaction.service';
 
 @Component({
   selector: 'app-delete-note',
@@ -11,7 +12,8 @@ import { UserService } from '../../services/user.service'
 export class DeleteNoteComponent implements OnInit {
 
   constructor(private service: UserService,
-              private snackBar: MatSnackBar) { }
+              private snackBar: MatSnackBar,
+              private interaction: InteractionService) { }
 
   data: any
   message: any
@@ -26,6 +28,7 @@ export class DeleteNoteComponent implements OnInit {
       this.data = response
       this.message = this.data.message
       this.snackBar.open(this.message, '', { duration: 2000 })
+      this.interaction.sendContent('created note')
     }, error => {
       console.log(error)
       this.error = error
