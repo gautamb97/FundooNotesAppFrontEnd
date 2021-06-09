@@ -40,14 +40,17 @@ export class GetNotesComponent implements OnInit {
     })
   }
 
-  updateNote(noteId: string) {
+  updateNote() {
     let dialogRef = this.dialog.open(UpdateNoteComponent, {
       width: '38%',
       height: '22%'
     })
-    localStorage.setItem('noteId', noteId)
     dialogRef.afterClosed().subscribe(() => {
       this.submit()
     })
+  }
+
+  fetchNoteId(noteId: string) {
+    localStorage.setItem('noteId', noteId)
   }
 }
