@@ -18,7 +18,7 @@
         <mat-menu #menu="matMenu">
             <div>
                 <div class="delete-btn-style" fxLayout="column">
-                    <app-delete-note></app-delete-note>
+                    <app-delete-note [noteId]="id"></app-delete-note>
                     <button mat-stroked-button class="delete-btn" fxFlex='stretch'>Add label</button>
                 </div>
             </div>
