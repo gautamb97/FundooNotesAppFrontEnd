@@ -23,8 +23,7 @@ export class UpdateNoteComponent implements OnInit {
   }
 
   submitForUpdate() {
-    const token = localStorage.getItem('token')
-    this.updateService.updateNote(this.note, token).subscribe(response => {
+    this.updateService.updateNote(this.note).subscribe(response => {
       console.log(response)
       this.data = response
       this.message = this.data.message

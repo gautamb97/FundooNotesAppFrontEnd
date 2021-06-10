@@ -22,8 +22,7 @@ export class DeleteNoteComponent implements OnInit {
   }
 
   deleteNote() {
-    const token = localStorage.getItem('token')
-    this.service.deleteNote(token).subscribe(response => {
+    this.service.deleteNote().subscribe(response => {
       console.log(response)
       this.data = response
       this.message = this.data.message

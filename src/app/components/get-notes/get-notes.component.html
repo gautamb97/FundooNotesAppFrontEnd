@@ -1,8 +1,8 @@
 <div class="main-box">
-    <div class="box" *ngFor="let array of notes" fxFlexAlign="stretch">
-        <div *ngIf="array.isTrashed == false">
+    <ng-container *ngFor="let array of notes">
+        <div class="box" *ngIf="array.isTrashed == false" fxFlexAlign="stretch">
             <mat-card class="card" (click)="fetchNoteId(array._id)">
-                <div (click)="updateNote()">
+                <div (click)="updateNote(array)">
                     <div class=array-content>
                         {{array.title}}
                     </div>
@@ -13,5 +13,5 @@
                 <app-icons class="icons"></app-icons>
             </mat-card>
         </div>
-    </div>
+    </ng-container>
 </div>

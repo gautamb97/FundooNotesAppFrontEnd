@@ -28,8 +28,7 @@ export class GetNotesComponent implements OnInit {
   }
 
   submit() {
-    const token = localStorage.getItem('token')
-    this.getService.getNotes(token).subscribe(res => {
+    this.getService.getNotes().subscribe(res => {
       this.data = res
       this.notes = this.data.data
       this.notes = this.notes.reverse()
@@ -40,10 +39,12 @@ export class GetNotesComponent implements OnInit {
     })
   }
 
-  updateNote() {
+  updateNote(noteData: any) {
+    console.log(noteData)
     let dialogRef = this.dialog.open(UpdateNoteComponent, {
       width: '38%',
-      height: '22%'
+      height: '22%',
+      data: { noteData }
     })
     dialogRef.afterClosed().subscribe(() => {
       this.submit()

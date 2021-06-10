@@ -31,8 +31,7 @@ export class CreateNoteComponent implements OnInit {
   submit() {
     this.panelSize = !this.panelSize
     console.log(this.panelSize)
-    const token = localStorage.getItem('token')
-    this.noteService.createNote(this.note, token).subscribe(response => {
+    this.noteService.createNote(this.note).subscribe(response => {
       console.log(response) 
       this.data = response
       this.message = this.data.message
