@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { UpdateNote } from '../update-note/update-note.model';
 import { UserService } from '../../services/user.service';
@@ -12,18 +13,22 @@ import { UserService } from '../../services/user.service';
 export class UpdateNoteComponent implements OnInit {
 
   constructor(private updateService: UserService,
-              private snackBar: MatSnackBar) { }
+              private snackBar: MatSnackBar,
+              @Inject(MAT_DIALOG_DATA) public dialogData: any
+              ) { }
 
   note = new UpdateNote()
   data: any
   message!: string
   error: any
+  noteId: any
 
   ngOnInit(): void {
   }
 
   submitForUpdate() {
-    this.updateService.updateNote(this.note).subscribe(response => {
+    this.noteId = this.dialogData.noteData._id
+    this.updateService.updateNote(this.note, this.noteId).subscribe(response => {
       console.log(response)
       this.data = response
       this.message = this.data.message
