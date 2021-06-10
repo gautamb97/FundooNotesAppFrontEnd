@@ -45,11 +45,11 @@ export class UserService {
     return this.httpService.getData(environment.URL + 'notes', {headers: httpHeaders})
   }
 
-  updateNote(data:any) {
+  updateNote(data:any, noteId: any) {
     const httpHeaders = new HttpHeaders({
         'token': this.token
     })
-    return this.httpService.putDataWithHeader(environment.URL + 'notes/'+ localStorage.getItem('noteId'), data, {headers: httpHeaders})
+    return this.httpService.putDataWithHeader(environment.URL + 'notes/'+ noteId, data, {headers: httpHeaders})
   }
 
   deleteNote() {
