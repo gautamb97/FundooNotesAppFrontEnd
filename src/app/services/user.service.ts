@@ -52,10 +52,10 @@ export class UserService {
     return this.httpService.putDataWithHeader(environment.URL + 'notes/'+ noteId, data, {headers: httpHeaders})
   }
 
-  deleteNote() {
+  deleteNote(noteId: any) {
     const httpHeaders = new HttpHeaders({ 
         'token': this.token
     })
-    return this.httpService.deleteDataWithHeader(environment.URL + 'notes/' + localStorage.getItem('noteId'), {headers: httpHeaders})
+    return this.httpService.deleteDataWithHeader(environment.URL + 'notes/' + noteId, {headers: httpHeaders})
   }
 }
