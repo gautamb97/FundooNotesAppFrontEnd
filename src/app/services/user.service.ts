@@ -10,6 +10,7 @@ import { environment } from '../../environments/environment';
 })
 export class UserService {
 
+  token: any = localStorage.getItem('token')
   constructor(private httpService: HttpService) { }
   registerUser(data: any) {
     return this.httpService.postData(environment.URL + 'registration', data)
@@ -30,30 +31,30 @@ export class UserService {
     return this.httpService.postDataWithHeader(environment.URL + 'resetPassword/:token', data, {headers: httpHeaders})
   }
 
-  createNote(data: any, token: any) {
+  createNote(data: any) {
     const httpHeaders = new HttpHeaders({
-        'token': token
+        'token': this.token
     })
     return this.httpService.postDataWithHeader(environment.URL + 'notes', data, {headers: httpHeaders})
   }
 
-  getNotes(token: any) {
+  getNotes() {
     const httpHeaders = new HttpHeaders({
-        'token': token
+        'token': this.token
     })
     return this.httpService.getData(environment.URL + 'notes', {headers: httpHeaders})
   }
 
-  updateNote(data:any, token: any) {
+  updateNote(data:any) {
     const httpHeaders = new HttpHeaders({
-        'token': token
+        'token': this.token
     })
     return this.httpService.putDataWithHeader(environment.URL + 'notes/'+ localStorage.getItem('noteId'), data, {headers: httpHeaders})
   }
 
-  deleteNote(token: any) {
-    const httpHeaders = new HttpHeaders({
-        'token': token
+  deleteNote() {
+    const httpHeaders = new HttpHeaders({ 
+        'token': this.token
     })
     return this.httpService.deleteDataWithHeader(environment.URL + 'notes/' + localStorage.getItem('noteId'), {headers: httpHeaders})
   }
