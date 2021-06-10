@@ -2,11 +2,11 @@
     <ng-container *ngFor="let array of notes">
         <div class="box" *ngIf="array.isTrashed == false" fxFlexAlign="stretch">
             <mat-card class="card" (click)="fetchNoteId(array._id)">
-                <div (click)="updateNote(array)">
-                    <div class=array-content>
+                <div (click)="updateNote(array)" class=array-content>
+                    <div>
                         {{array.title}}
                     </div>
-                    <div class=array-content>
+                    <div class="description-content">
                         {{array.description}}
                     </div>
                 </div>

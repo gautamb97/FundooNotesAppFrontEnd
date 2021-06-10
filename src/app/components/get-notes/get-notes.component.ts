@@ -50,7 +50,7 @@ export class GetNotesComponent implements OnInit {
       this.submit()
     })
   }
-
+  
   fetchNoteId(noteId: string) {
     localStorage.setItem('noteId', noteId)
   }
