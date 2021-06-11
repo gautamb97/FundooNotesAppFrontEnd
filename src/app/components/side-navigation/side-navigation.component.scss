@@ -15,15 +15,16 @@
 #sidenav .menu-item {
     width: 100%;
     border-radius: 20px;
-    text-align: left; 
+    text-align: left;
+    overflow: hidden; 
 }
 
 #sidenav .menu-item:hover {
   background: $lightOrange;
   border-top-left-radius: 0px;
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-    border-bottom-left-radius: 0px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 0px;
 }
 #sidenav .menu-item mat-icon {
     margin-right: 20px;

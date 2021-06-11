@@ -1,38 +1,39 @@
-<mat-sidenav-container id="sidenavContainer" fullscreen>
-    <mat-sidenav mode="side" id="sidenav" [class.menu-close]="!toggle" [class.menu-open]="toggle"
-    opened>
-          <div>
-            <button mat-icon-button class="menu-item" (click)="displayNotes()">
-                <mat-icon fontSet="material-icons-outlined" >lightbulb</mat-icon>
-                Notes
-            </button>
-        </div>
-        <div>
-            <button mat-icon-button class="menu-item">
-                <mat-icon fontSet="material-icons-outlined">notifications</mat-icon>
-                Reminder
-            </button>
-        </div>
-        <div>
-            <button mat-icon-button class="menu-item">
-                <mat-icon fontSet="material-icons-outlined">edit</mat-icon>
-                Edit Labels
-            </button>
-        </div>
-        <div>
-            <button mat-icon-button class="menu-item">
-                <mat-icon fontSet="material-icons-outlined">archive</mat-icon>
-                Archive
-            </button>
-        </div>
-        <div>
-            <button mat-icon-button class="menu-item" (click)="trashedNotes()">
-                <mat-icon fontSet="material-icons-outlined">delete</mat-icon>
-                Bin
-            </button>
-        </div>
-    </mat-sidenav>
+<div class="side-nav">
+    <mat-sidenav-container id="sidenavContainer" fullscreen>
+        <mat-sidenav mode="side" id="sidenav" [class.menu-close]="!toggle" [class.menu-open]="toggle" opened>
+            <div>
+                <button mat-icon-button class="menu-item" (click)="displayNotes()">
+                    <mat-icon fontSet="material-icons-outlined">lightbulb</mat-icon>
+                    Notes
+                </button>
+            </div>
+            <div>
+                <button mat-icon-button class="menu-item">
+                    <mat-icon fontSet="material-icons-outlined">notifications</mat-icon>
+                    Reminder
+                </button>
+            </div>
+            <div>
+                <button mat-icon-button class="menu-item">
+                    <mat-icon fontSet="material-icons-outlined">edit</mat-icon>
+                    Edit Labels
+                </button>
+            </div>
+            <div>
+                <button mat-icon-button class="menu-item">
+                    <mat-icon fontSet="material-icons-outlined">archive</mat-icon>
+                    Archive
+                </button>
+            </div>
+            <div>
+                <button mat-icon-button class="menu-item" (click)="trashedNotes()">
+                    <mat-icon fontSet="material-icons-outlined">delete</mat-icon>
+                    Bin
+                </button>
+            </div>
+        </mat-sidenav>
         <div>
             <router-outlet></router-outlet>
         </div>
-</mat-sidenav-container>
+    </mat-sidenav-container>
+</div>
