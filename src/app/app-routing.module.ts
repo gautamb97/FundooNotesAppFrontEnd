@@ -6,15 +6,18 @@ import { ForgotPasswordComponent } from '../app/pages/forgot-password/forgot-pas
 import { ResetPasswordComponent } from '../app/pages/reset-password/reset-password.component';
 import { DashboardComponent } from '../app/components/dashboard/dashboard.component'
 import { CreateNoteComponent } from './components/create-note/create-note.component';
+import { IsTrashedComponent } from './components/is-trashed/is-trashed.component';
 
 const routes: Routes = [
-  { path: '*', component : RegistrationComponent },
+  { path: '', component : RegistrationComponent },
   { path: 'register', component : RegistrationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'forgotPassword', component: ForgotPasswordComponent},
   { path: 'resetPassword/:token', component: ResetPasswordComponent},
   { path: 'dashboard', component: DashboardComponent, children: [
-    { path: 'notes', component: CreateNoteComponent }
+    { path: '', component: CreateNoteComponent },
+    { path: 'notes', component: CreateNoteComponent },
+    { path: 'trash', component: IsTrashedComponent }
     ]
   },
 ];
