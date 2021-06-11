@@ -29,6 +29,7 @@ export class GetNotesComponent implements OnInit {
     this.interaction.deleteNoteData$.subscribe(() => {
       this.submit()
     })
+
   }
 
   submit() {
