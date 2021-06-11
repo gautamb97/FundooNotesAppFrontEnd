@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpHeaders } from '@angular/common/http'
 
 import { HttpService } from './http.service';
 import { environment } from '../../environments/environment';
@@ -10,7 +9,6 @@ import { environment } from '../../environments/environment';
 })
 export class UserService {
 
-  token: any = localStorage.getItem('token')
   constructor(private httpService: HttpService) { }
   registerUser(data: any) {
     return this.httpService.postData(environment.URL + 'registration', data)
@@ -25,37 +23,22 @@ export class UserService {
   }
 
   resetPassword(data: any, token: any) {
-    const httpHeaders = new HttpHeaders({
-        'token': token.token
-    })
-    return this.httpService.postDataWithHeader(environment.URL + 'resetPassword/:token', data, {headers: httpHeaders})
+    return this.httpService.postDataUsingToken(environment.URL + 'resetPassword/:token', data, token)
   }
 
   createNote(data: any) {
-    const httpHeaders = new HttpHeaders({
-        'token': this.token
-    })
-    return this.httpService.postDataWithHeader(environment.URL + 'notes', data, {headers: httpHeaders})
+    return this.httpService.postDataWithHeader(environment.URL + 'notes', data)
   }
 
   getNotes() {
-    const httpHeaders = new HttpHeaders({
-        'token': this.token
-    })
-    return this.httpService.getData(environment.URL + 'notes', {headers: httpHeaders})
+    return this.httpService.getData(environment.URL + 'notes')
   }
 
   updateNote(data:any, noteId: any) {
-    const httpHeaders = new HttpHeaders({
-        'token': this.token
-    })
-    return this.httpService.putDataWithHeader(environment.URL + 'notes/'+ noteId, data, {headers: httpHeaders})
+    return this.httpService.putDataWithHeader(environment.URL + 'notes/'+ noteId, data)
   }
 
   deleteNote(noteId: any) {
-    const httpHeaders = new HttpHeaders({ 
-        'token': this.token
-    })
-    return this.httpService.deleteDataWithHeader(environment.URL + 'notes/' + noteId, {headers: httpHeaders})
+    return this.httpService.deleteData(environment.URL + 'notes/' + noteId)
   }
 }
