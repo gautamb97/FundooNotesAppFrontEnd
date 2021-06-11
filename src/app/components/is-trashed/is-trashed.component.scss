@@ -1,0 +1,35 @@
+.card{
+    width: 240px;
+    margin-bottom: 20px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 73%;
+}
+
+.main-box{
+    display: flex;
+    justify-content:flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+    margin-left: 18%;
+    padding-top: 5%;
+}
+.box{
+    width: 25%;
+}
+
+.icons {
+    width: 15px; 
+    display: flex; 
+    margin-left: 0%;
+    padding-top: 16%;  
+}
+
+.array-content {
+    padding-left: 4.5%;
+
+    .description-content {
+        padding-top: 2%;
+    }
+}
