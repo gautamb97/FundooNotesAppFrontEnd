@@ -10,7 +10,14 @@
                         {{array.description}}
                     </div>
                 </div>
-                <app-icons class="icons"></app-icons>
+                <div class="icons">
+                    <button mat-icon-button matTooltip="Delete forever">
+                        <mat-icon fontSet="material-icons-outlined">delete_forever</mat-icon>
+                    </button>
+                    <button mat-icon-button matTooltip="Restore">
+                        <mat-icon fontSet="material-icons-outlined">restore_from_trash</mat-icon>
+                    </button>
+                </div>
             </mat-card>
         </div>
     </ng-container>
