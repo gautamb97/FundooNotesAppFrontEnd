@@ -14,6 +14,10 @@ export class SideNavigationComponent implements OnInit {
   displayNotes(){
     this.route.navigate(['dashboard/notes'])
   }
+
+  trashedNotes(){
+    this.route.navigate(['dashboard/trash'])
+  }
   constructor(private route: Router) { }
 
   ngOnInit(): void {
