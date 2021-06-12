@@ -1,0 +1,19 @@
+<div class="main-box">
+    <ng-container *ngFor="let array of notes">
+        <div class="box" *ngIf="array.isTrashed === false && array.isArchieved === true" fxFlexAlign="stretch">
+            <mat-card class="card">
+                <div class=array-content>
+                    <div>
+                        {{array.title}}
+                    </div>
+                    <div class="description-content">
+                        {{array.description}}
+                    </div>
+                </div>
+                <div class="icons">
+                    <app-icons></app-icons>
+                </div>
+            </mat-card>
+        </div>
+    </ng-container>
+</div>
