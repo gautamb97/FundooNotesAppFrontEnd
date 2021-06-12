@@ -18,6 +18,11 @@ export class SideNavigationComponent implements OnInit {
   trashedNotes(){
     this.route.navigate(['dashboard/trash'])
   }
+
+  archiveNotes(){
+    this.route.navigate(['dashboard/archive'])
+  }
+
   constructor(private route: Router) { }
 
   ngOnInit(): void {
