@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { UserService } from 'src/app/services/user.service';
+import { InteractionService } from 'src/app/services/interaction.service';
 
 @Component({
   selector: 'app-is-trashed',
@@ -13,10 +14,15 @@ export class IsTrashedComponent implements OnInit {
   data: any;
   error: any;
   message: any;
-  constructor(private getNotes: UserService) { }
+  id: any
+  constructor(private getNotes: UserService, 
+              private removeUpdate: InteractionService) { }
 
   ngOnInit(): void {
     this.submit()
+    this.removeUpdate.removeNoteData$.subscribe(() => {
+      this.submit()
+    })
   }
 
   submit() {
@@ -31,4 +37,21 @@ export class IsTrashedComponent implements OnInit {
     })
   }
 
+  fetchNoteId(noteId: string) {
+    this.id = noteId
+  }
+
+  removeNote() {
+    console.log(this.id)
+    this.getNotes.removeNote(this.id).subscribe(res => {
+      console.log(res)
+      this.data = res
+      this.notes = this.data.data
+      this.removeUpdate.removeContent('removed from db')
+    }, error => {
+      console.log(error)
+      this.error = error.error.err
+      this.message = this.error
+    })
+  }
 }

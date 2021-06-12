@@ -1,6 +1,6 @@
 <div class="main-box">
     <ng-container *ngFor="let array of notes">
-        <div class="box" *ngIf="array.isTrashed === true" fxFlexAlign="stretch">
+        <div class="box" *ngIf="array.isTrashed === true" fxFlexAlign="stretch" (click)="fetchNoteId(array._id)">
             <mat-card class="card">
                 <div class=array-content>
                     <div>
@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <div class="icons">
-                    <button mat-icon-button matTooltip="Delete forever">
+                    <button mat-icon-button matTooltip="Delete forever" (click)="removeNote()">
                         <mat-icon>delete_forever</mat-icon>
                     </button>
                     <button mat-icon-button matTooltip="Restore">
