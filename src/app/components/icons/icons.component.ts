@@ -7,8 +7,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class IconsComponent implements OnInit {
   @Input() public id: any
+
+  archiveStatus = false
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggle() {
+    this.archiveStatus = !this.archiveStatus
   }
 }
