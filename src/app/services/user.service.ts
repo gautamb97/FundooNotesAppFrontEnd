@@ -41,4 +41,8 @@ export class UserService {
   deleteNote(noteId: any) {
     return this.httpService.deleteData(environment.URL + 'notes/' + noteId)
   }
+
+  removeNote(noteId: any) {
+    return this.httpService.deleteData(environment.URL + 'note/' + noteId)
+  }
 }
