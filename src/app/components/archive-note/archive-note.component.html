@@ -1,0 +1,8 @@
+<div (click)="toggle()">
+    <button mat-icon-button matTooltip="Archive" *ngIf="archiveStatus === false" (click)="archiveNote()">
+        <mat-icon fontSet="material-icons-outlined">archive</mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="UnArchive" *ngIf="archiveStatus === true">
+        <mat-icon fontSet="material-icons-outlined">unarchive</mat-icon>
+    </button>
+</div>
