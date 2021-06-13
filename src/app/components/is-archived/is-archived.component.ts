@@ -33,20 +33,4 @@ export class IsArchivedComponent implements OnInit {
     })
   }
 
-  fetchNoteId(noteId: string) {
-    this.id = noteId
-  }
-
-  archiveNote() {
-    this.service.archiveNote(this.id).subscribe(response => {
-      this.data = response
-      this.message = this.data.message
-      this.snackBar.open(this.message, '', { duration: 2000 })
-    }, error => {
-      console.log(error)
-      this.error = error
-      this.message = this.error.error.error
-      this.snackBar.open(this.message, '', { duration: 2000 })
-    })
-  }
 }
