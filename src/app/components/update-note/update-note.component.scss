@@ -5,6 +5,7 @@
 
 .icons {
     padding-top: 5%;
+    display: flex;
     button {
      margin-left: 40%;
     }
@@ -12,4 +13,8 @@
 
 .update {
     overflow: hidden;
+}
+
+.cls-btn {
+    margin-left: 38%;
 }

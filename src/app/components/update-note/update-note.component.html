@@ -6,7 +6,11 @@
         <input matInput placeholder="description" [(ngModel)]="note.description" name="description" autocomplete="off">
     </div>
     <div class="icons">
+        <div>
         <app-icons></app-icons>
+        </div>
+        <div class="cls-btn">
         <button mat-button [mat-dialog-close]="true" (click)="submitForUpdate()">close</button>
+        </div>
     </div>
 </div>
