@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class UserService {
-
+  data: any
   constructor(private httpService: HttpService) { }
   registerUser(data: any) {
     return this.httpService.postData(environment.URL + 'registration', data)
@@ -36,6 +36,10 @@ export class UserService {
 
   updateNote(data:any, noteId: any) {
     return this.httpService.putDataWithHeader(environment.URL + 'notes/'+ noteId, data)
+  }
+
+  archiveNote(noteId: any) {
+    return this.httpService.putDataWithHeader(environment.URL + 'notes/archive/'+ noteId, this.data)
   }
 
   deleteNote(noteId: any) {
