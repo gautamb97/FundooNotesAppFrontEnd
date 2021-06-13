@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { UserService } from 'src/app/services/user.service';
 import { InteractionService } from 'src/app/services/interaction.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-is-trashed',
@@ -16,7 +17,8 @@ export class IsTrashedComponent implements OnInit {
   message: any;
   id: any
   constructor(private getNotes: UserService, 
-              private removeUpdate: InteractionService) { }
+              private removeUpdate: InteractionService,
+              private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.submit()
@@ -47,6 +49,8 @@ export class IsTrashedComponent implements OnInit {
       console.log(res)
       this.data = res
       this.notes = this.data.data
+      this.message = this.data.message
+      this.snackBar.open(this.message, '', { duration: 2000 })
       this.removeUpdate.removeContent('removed from db')
     }, error => {
       console.log(error)
