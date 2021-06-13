@@ -11,14 +11,7 @@
 <button mat-icon-button matTooltip="Add image">
     <mat-icon fontSet="material-icons-outlined">image</mat-icon>
 </button>
-<div (click)="toggle()">
-<button mat-icon-button matTooltip="Archive" *ngIf="archiveStatus === false">
-    <mat-icon fontSet="material-icons-outlined">archive</mat-icon>
-</button>
-<button mat-icon-button matTooltip="UnArchive" *ngIf="archiveStatus === true">
-    <mat-icon fontSet="material-icons-outlined">unarchive</mat-icon>
-</button>
-</div>
+<app-archive-note [id]="id"></app-archive-note>
 <button mat-icon-button matTooltip="More" [matMenuTriggerFor]="menu">
     <div>
         <mat-menu #menu="matMenu">
