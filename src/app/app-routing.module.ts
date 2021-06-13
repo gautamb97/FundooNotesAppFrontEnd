@@ -7,6 +7,7 @@ import { ResetPasswordComponent } from '../app/pages/reset-password/reset-passwo
 import { DashboardComponent } from '../app/components/dashboard/dashboard.component'
 import { CreateNoteComponent } from './components/create-note/create-note.component';
 import { IsTrashedComponent } from './components/is-trashed/is-trashed.component';
+import { IsArchivedComponent } from './components/is-archived/is-archived.component';
 
 const routes: Routes = [
   { path: '', component : RegistrationComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, children: [
     { path: '', component: CreateNoteComponent },
     { path: 'notes', component: CreateNoteComponent },
-    { path: 'trash', component: IsTrashedComponent }
+    { path: 'trash', component: IsTrashedComponent },
+    { path: 'archive', component: IsArchivedComponent },
     ]
   },
 ];
