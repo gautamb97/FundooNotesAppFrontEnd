@@ -32,6 +32,7 @@ export class ArchiveNoteComponent implements OnInit {
       this.data = response
       this.message = this.data.message
       this.snackBar.open(this.message, '', { duration: 2000 })
+      this.interaction.sendContent('send content')
     }, error => {
       console.log(error)
       this.error = error
