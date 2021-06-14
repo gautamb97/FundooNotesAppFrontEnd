@@ -16,15 +16,10 @@ export class ArchiveNoteComponent implements OnInit {
               private interaction: InteractionService,
               private snackBar: MatSnackBar) { }
 
-  archiveStatus = false
   data: any
   message: any
   error: any
   ngOnInit(): void {
-  }
-
-  toggle() {
-    this.archiveStatus = !this.archiveStatus
   }
 
   archiveNote() {

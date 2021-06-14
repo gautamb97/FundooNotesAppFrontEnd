@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { FormsModule } from '@angular/forms';
 
 import { CreateNoteComponent } from './create-note.component';
 
@@ -8,7 +11,12 @@ describe('CreateNoteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CreateNoteComponent ]
+      declarations: [ CreateNoteComponent ],
+      imports: [
+        HttpClientTestingModule,
+        MatSnackBarModule,
+        FormsModule
+      ]
     })
     .compileComponents();
   });

@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { ArchiveNoteComponent } from './archive-note.component';
 
@@ -8,7 +10,11 @@ describe('ArchiveNoteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ArchiveNoteComponent ]
+      declarations: [ ArchiveNoteComponent ],
+      imports: [
+        HttpClientTestingModule,
+        MatSnackBarModule
+      ]
     })
     .compileComponents();
   });
