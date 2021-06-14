@@ -11,7 +11,9 @@
                     </div>
                 </div>
                 <div class="icons">
-                    <app-icons></app-icons>
+                    <button mat-icon-button matTooltip="UnArchive" (click)="fetchNoteId(array._id);unArchiveNote()">
+                        <mat-icon fontSet="material-icons-outlined">unarchive</mat-icon>
+                    </button>
                 </div>
             </mat-card>
         </div>
