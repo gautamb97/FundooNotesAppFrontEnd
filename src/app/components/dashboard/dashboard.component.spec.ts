@@ -11,6 +11,9 @@ import { DashboardComponent } from './dashboard.component';
 import { TitleComponent } from '../title/title.component';
 import { SideNavigationComponent } from '../side-navigation/side-navigation.component';
 import { SearchComponent } from '../search/search.component'
+import { MatMenuModule } from '@angular/material/menu';
+import { RouterTestingModule } from '@angular/router/testing';
+import { By } from '@angular/platform-browser';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -31,7 +34,9 @@ describe('DashboardComponent', () => {
         BrowserAnimationsModule,
         MatFormFieldModule,
         FormsModule,
-        MatInputModule
+        MatInputModule,
+        MatMenuModule,
+        RouterTestingModule
       ]
     })
     .compileComponents();
@@ -43,7 +48,16 @@ describe('DashboardComponent', () => {
     fixture.detectChanges();
   });
 
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should check the title name', ()=> {
+    const title = fixture.debugElement.query(By.css('app-title'));
+    expect(title.nativeElement.textContent).toEqual('FundooNote');
+  });
+
+  it('side menu property', () => {
+    expect(component.isMenuOpen).toBe(false)
+  });
 });
