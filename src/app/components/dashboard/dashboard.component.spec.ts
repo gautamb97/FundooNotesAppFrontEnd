@@ -60,4 +60,9 @@ describe('DashboardComponent', () => {
   it('side menu property', () => {
     expect(component.isMenuOpen).toBe(false)
   });
+
+  it('function when clicked should return true', () => {
+    component.toggle()
+    expect(component.isMenuOpen).toBeTrue()
+  })
 });
