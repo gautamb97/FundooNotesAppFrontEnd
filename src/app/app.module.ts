@@ -18,9 +18,11 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 import { TitleComponent } from './components/title/title.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './pages/login/login.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
@@ -29,7 +31,12 @@ import { SearchComponent } from './components/search/search.component';
 import { SideNavigationComponent } from './components/side-navigation/side-navigation.component';
 import { CreateNoteComponent } from './components/create-note/create-note.component';
 import { IconsComponent } from './components/icons/icons.component';
-import { GetNotesComponent } from './components/get-notes/get-notes.component'
+import { GetNotesComponent } from './components/get-notes/get-notes.component';
+import { UpdateNoteComponent } from './components/update-note/update-note.component';
+import { DeleteNoteComponent } from './components/delete-note/delete-note.component';
+import { IsTrashedComponent } from './components/is-trashed/is-trashed.component';
+import { IsArchivedComponent } from './components/is-archived/is-archived.component';
+import { ArchiveNoteComponent } from './components/archive-note/archive-note.component'
 
 @NgModule({
   declarations: [
@@ -45,6 +52,11 @@ import { GetNotesComponent } from './components/get-notes/get-notes.component'
     CreateNoteComponent,
     IconsComponent,
     GetNotesComponent,
+    UpdateNoteComponent,
+    DeleteNoteComponent,
+    IsTrashedComponent,
+    IsArchivedComponent,
+    ArchiveNoteComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,7 +76,9 @@ import { GetNotesComponent } from './components/get-notes/get-notes.component'
     MatIconModule,
     MatSidenavModule,
     MatExpansionModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
