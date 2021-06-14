@@ -42,6 +42,10 @@ export class UserService {
     return this.httpService.putDataWithHeader(environment.URL + 'notes/archive/'+ noteId, this.data)
   }
 
+  restoreNote(noteId: any) {
+    return this.httpService.putDataWithHeader(environment.URL + 'notes/restore/'+ noteId, this.data)
+  }
+
   deleteNote(noteId: any) {
     return this.httpService.deleteData(environment.URL + 'notes/' + noteId)
   }

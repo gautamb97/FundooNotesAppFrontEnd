@@ -14,7 +14,7 @@
                     <button mat-icon-button matTooltip="Delete forever" (click)="fetchNoteId(array._id);removeNote()">
                         <mat-icon>delete_forever</mat-icon>
                     </button>
-                    <button mat-icon-button matTooltip="Restore" (click)="fetchNoteId(array._id);array.isTrashed = false">
+                    <button mat-icon-button matTooltip="Restore" (click)="fetchNoteId(array._id);restoreNote()">
                         <mat-icon>restore_from_trash</mat-icon>
                     </button>
                 </div>

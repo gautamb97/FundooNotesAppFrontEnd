@@ -58,4 +58,20 @@ export class IsTrashedComponent implements OnInit {
       this.message = this.error
     })
   }
+
+  restoreNote() {
+    console.log(this.id)
+    this.getNotes.restoreNote(this.id).subscribe(res => {
+      console.log(res)
+      this.data = res
+      this.notes = this.data.data
+      this.message = this.data.message
+      this.snackBar.open(this.message, '', { duration: 2000 })
+      this.removeUpdate.removeContent('removed from db')
+    }, error => {
+      console.log(error)
+      this.error = error.error.err
+      this.message = this.error
+    })
+  }
 }
