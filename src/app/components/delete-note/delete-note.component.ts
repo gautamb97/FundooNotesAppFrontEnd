@@ -28,7 +28,7 @@ export class DeleteNoteComponent implements OnInit {
       this.data = response
       this.message = this.data.message
       this.snackBar.open(this.message, '', { duration: 2000 })
-      this.interaction.deleteContent('delete note')
+      this.interaction.sendContent('delete note')
     }, error => {
       console.log(error)
       this.error = error
