@@ -12,17 +12,21 @@ import { InteractionService } from 'src/app/services/interaction.service';
 export class DeleteNoteComponent implements OnInit {
 
   @Input() public noteId: any
+  data: any
+  message: any
+  error: any
   constructor(private service: UserService,
               private snackBar: MatSnackBar,
               private interaction: InteractionService,) { }
 
-  data: any
-  message: any
-  error: any
-
   ngOnInit(): void {
   }
 
+  /**
+   * @description : It is delete an existing note in and change the trash value
+   * @method      : deleteNote from UserService
+   * @method      : sencContent from Interaction Service
+  */
   deleteNote() {
     this.service.deleteNote(this.noteId).subscribe(response => {
       this.data = response

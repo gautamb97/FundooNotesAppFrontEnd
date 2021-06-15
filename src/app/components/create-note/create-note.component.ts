@@ -12,6 +12,9 @@ import { InteractionService } from 'src/app/services/interaction.service';
 })
 export class CreateNoteComponent implements OnInit {
   panelSize = false;
+  message: any
+  data: any
+  error: any
   constructor(private snackBar: MatSnackBar,
               private noteService: UserService,
               private interaction: InteractionService) { }
@@ -21,13 +24,19 @@ export class CreateNoteComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * @description : It helps to change the mat panel expansion
+   * @return      : reasign panel value
+  */
   close() {
     return this.panelSize = !this.panelSize
   }
-  message: any
-  data: any
-  error: any
 
+  /**
+   * @description : It is create a note in fundooNote
+   * @method      : createNote from UserService
+   * @method      : sencContent from Interaction Service
+  */
   submit() {
     this.panelSize = !this.panelSize
     console.log(this.panelSize)

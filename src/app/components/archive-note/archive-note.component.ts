@@ -12,16 +12,22 @@ import { InteractionService } from 'src/app/services/interaction.service';
 export class ArchiveNoteComponent implements OnInit {
 
   @Input() public id: any
+  data: any
+  message: any
+  error: any
+  
   constructor(private service: UserService,
               private interaction: InteractionService,
               private snackBar: MatSnackBar) { }
 
-  data: any
-  message: any
-  error: any
   ngOnInit(): void {
   }
 
+  /**
+   * @description : It is Archive an existing note in Archive section of fundooNote
+   * @method      : ArchiveNote from UserService
+   * @method      : sencContent from Interaction Service
+  */
   archiveNote() {
     this.service.archiveNote(this.id).subscribe(response => {
       this.data = response

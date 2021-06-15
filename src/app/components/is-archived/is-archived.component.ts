@@ -26,6 +26,10 @@ export class IsArchivedComponent implements OnInit {
     })
   }
 
+  /**
+   * @description : It fetch all notes which are existing in db
+   * @method      : getNotes from UserService
+  */
   submit() {
     this.service.getNotes().subscribe(res => {
       this.data = res
@@ -38,10 +42,15 @@ export class IsArchivedComponent implements OnInit {
     })
   }
 
+  //fetch noteId from the array of notes
   fetchNoteId(noteId: string) {
     this.id = noteId
   }
 
+  /**
+   * @description : It uses to unarchive a note which is present inside the archive section of fundooNotes
+   * @method      : unarchiveNote from UserService
+  */
   unArchiveNote() {
     console.log(this.id)
     this.service.unArchiveNote(this.id).subscribe(res => {

@@ -32,6 +32,10 @@ export class GetNotesComponent implements OnInit {
 
   }
 
+  /**
+   * @description : It fetch all notes which are existing in db
+   * @method      : getNotes from UserService
+  */
   submit() {
     this.getService.getNotes().subscribe(res => {
       this.data = res
@@ -44,6 +48,10 @@ export class GetNotesComponent implements OnInit {
     })
   }
 
+  /**
+   * @description : It is used to Update an existing note of fundooNote for that it uses dialogbox
+   * @method      : submit which is for get all notes after updating note
+  */
   updateNote(noteData: any) {
     let dialogRef = this.dialog.open(UpdateNoteComponent, {
       width: '38%',
@@ -55,6 +63,9 @@ export class GetNotesComponent implements OnInit {
     })
   }
   
+  /**
+   * @description : It fecthes NoteId from the array
+  */
   fetchNoteId(noteId: string) {
     this.id = noteId
   }

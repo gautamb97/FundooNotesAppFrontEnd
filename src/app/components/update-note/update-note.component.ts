@@ -12,20 +12,24 @@ import { UserService } from '../../services/user.service';
 })
 export class UpdateNoteComponent implements OnInit {
 
+  data: any
+  message!: string
+  error: any
+  noteId: any
   constructor(private updateService: UserService,
               private snackBar: MatSnackBar,
               @Inject(MAT_DIALOG_DATA) public dialogData: any
               ) { }
 
   note = new UpdateNote()
-  data: any
-  message!: string
-  error: any
-  noteId: any
 
   ngOnInit(): void {
   }
 
+  /**
+   * @description : It uses to update an existing note and taking noteId from the dialog box data
+   * @method      : update from UserService
+  */
   submitForUpdate() {
     this.noteId = this.dialogData.noteData._id
     this.updateService.updateNote(this.note, this.noteId).subscribe(response => {
