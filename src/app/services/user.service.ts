@@ -22,6 +22,10 @@ export class UserService {
     return !!localStorage.getItem('token')
   }
 
+  getToken() {
+    return localStorage.getItem('token')
+  }
+
   forgotPassword(data: any) {
     return this.httpService.postData(environment.URL + 'forgotPassword', data)
   }

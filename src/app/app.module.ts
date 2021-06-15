@@ -22,7 +22,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import {MatTooltipModule} from '@angular/material/tooltip';
 
 import { TitleComponent } from './components/title/title.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './pages/login/login.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
@@ -38,6 +38,7 @@ import { IsTrashedComponent } from './components/is-trashed/is-trashed.component
 import { IsArchivedComponent } from './components/is-archived/is-archived.component';
 import { ArchiveNoteComponent } from './components/archive-note/archive-note.component';
 import { AuthGuard } from './services/auth.guard';
+import { TokenInterceptorService } from './services/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -81,7 +82,11 @@ import { AuthGuard } from './services/auth.guard';
     MatDialogModule,
     MatTooltipModule
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
