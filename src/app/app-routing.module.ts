@@ -8,6 +8,7 @@ import { DashboardComponent } from '../app/components/dashboard/dashboard.compon
 import { CreateNoteComponent } from './components/create-note/create-note.component';
 import { IsTrashedComponent } from './components/is-trashed/is-trashed.component';
 import { IsArchivedComponent } from './components/is-archived/is-archived.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   { path: '', component : RegistrationComponent },
@@ -15,7 +16,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'forgotPassword', component: ForgotPasswordComponent},
   { path: 'resetPassword/:token', component: ResetPasswordComponent},
-  { path: 'dashboard', component: DashboardComponent, children: [
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] ,children: [
     { path: '', component: CreateNoteComponent },
     { path: 'notes', component: CreateNoteComponent },
     { path: 'trash', component: IsTrashedComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
+  providers: [AuthGuard],
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })

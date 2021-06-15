@@ -36,7 +36,8 @@ import { UpdateNoteComponent } from './components/update-note/update-note.compon
 import { DeleteNoteComponent } from './components/delete-note/delete-note.component';
 import { IsTrashedComponent } from './components/is-trashed/is-trashed.component';
 import { IsArchivedComponent } from './components/is-archived/is-archived.component';
-import { ArchiveNoteComponent } from './components/archive-note/archive-note.component'
+import { ArchiveNoteComponent } from './components/archive-note/archive-note.component';
+import { AuthGuard } from './services/auth.guard';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,7 @@ import { ArchiveNoteComponent } from './components/archive-note/archive-note.com
     MatDialogModule,
     MatTooltipModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
