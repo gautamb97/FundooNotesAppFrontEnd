@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { SideNavigationComponent } from './side-navigation.component';
 
@@ -8,7 +9,10 @@ describe('SideNavigationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SideNavigationComponent ]
+      declarations: [ SideNavigationComponent ],
+      imports: [
+        RouterTestingModule
+      ]
     })
     .compileComponents();
   });
@@ -19,7 +23,11 @@ describe('SideNavigationComponent', () => {
     fixture.detectChanges();
   });
 
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('side menu property', () => {
+    expect(component.toggle).toBe(undefined)
+  });
 });
