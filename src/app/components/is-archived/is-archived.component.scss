@@ -9,7 +9,7 @@
 
 .main-box{
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap;
     overflow: hidden;
@@ -36,5 +36,11 @@
 
     .description-content {
         padding-top: 10%;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-box{
+        display: flex;
     }
 }

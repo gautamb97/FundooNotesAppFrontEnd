@@ -38,3 +38,9 @@
         padding-top: 10%;
     }
 }
+
+@media (max-width: 768px) {
+    .main-box{
+        display: flex;
+    }
+}

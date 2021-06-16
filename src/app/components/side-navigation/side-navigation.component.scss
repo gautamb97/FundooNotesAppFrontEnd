@@ -2,6 +2,7 @@
 
 #sidenavContainer {
     margin-top: 5%;
+    flex-wrap: wrap;
 }
 
 #sidenav {
@@ -52,4 +53,9 @@ body {
 #mainToolbar .toolbar-icon {
     cursor: pointer;
     margin: 0 8px;
+}
+
+.side-nav {
+    flex-wrap: wrap;
+    justify-content: inherit;
 }

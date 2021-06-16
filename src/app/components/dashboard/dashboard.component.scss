@@ -5,8 +5,9 @@
 .search {
     padding-left: 5%;
     padding-bottom: 100%;
-    margin-bottom: 100%;
+    margin-bottom: 150%;
     padding-top: 2%;
+
 }
 
 .title {
@@ -53,4 +54,33 @@
 ::ng-deep .mat-tooltip  {
     white-space: pre-line    !important;
     background-color: $dimgray;
+}
+
+@media (max-width: 1492px) {
+  .search-box{
+      width: 50%;
+  }
+
+  .menu-style {
+    margin-left: 50%;
+}
+}
+
+@media (max-width: 1126px) {
+    .menu-style {
+      margin-left: 40%;
+  }
+  }
+
+@media (max-width: 768px) {
+    .menu-style {
+      margin-left: 30%;
+    }
+  .frame{
+      flex-wrap: wrap;
+      justify-content: space-around;
+  }
+  .sideNav{
+      margin-top: 40%;
+  }
 }
